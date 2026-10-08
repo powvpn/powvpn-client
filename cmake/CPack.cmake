@@ -1,14 +1,16 @@
-set(CPACK_PACKAGE_VENDOR            AmneziaVPN)
+set(CPACK_PACKAGE_NAME              "Pow VPN")
+set(CPACK_PACKAGE_VENDOR            "Pow VPN")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Pow VPN")
 set(CPACK_PACKAGE_VERSION           ${AMNEZIAVPN_VERSION})
 if(WIN32)
-    set(CPACK_PACKAGE_FILE_NAME "AmneziaVPN_${AMNEZIAVPN_VERSION}_windows_x64")
+    set(CPACK_PACKAGE_FILE_NAME "PowVPN_${AMNEZIAVPN_VERSION}_windows_x64")
 elseif(APPLE AND NOT IOS AND NOT MACOS_NE)
     set(CPACK_PACKAGE_FILE_NAME "AmneziaVPN_${AMNEZIAVPN_VERSION}_macos_x64")
 elseif(LINUX AND NOT ANDROID)
     set(CPACK_PACKAGE_FILE_NAME "AmneziaVPN_${AMNEZIAVPN_VERSION}_linux_x64")
 endif()
-set(CPACK_PACKAGE_INSTALL_DIRECTORY AmneziaVPN)
-set(CPACK_PACKAGE_EXECUTABLES       AmneziaVPN AmneziaVPN)
+set(CPACK_PACKAGE_INSTALL_DIRECTORY "Pow VPN")
+set(CPACK_PACKAGE_EXECUTABLES       PowVPN "Pow VPN")
 set(CPACK_PRE_BUILD_SCRIPTS         ${CMAKE_CURRENT_LIST_DIR}/sign_binaries.cmake)
 set(CPACK_POST_BUILD_SCRIPTS        ${CMAKE_CURRENT_LIST_DIR}/sign_packages.cmake)
 set(CPACK_PROJECT_CONFIG_FILE       ${CMAKE_CURRENT_LIST_DIR}/CPackOptions.cmake)
@@ -23,8 +25,8 @@ else()
 endif()
 
 # === CPack IFW generator settings ===
-set(CPACK_IFW_PACKAGE_NAME                          AmneziaVPN)
-set(CPACK_IFW_PACKAGE_TITLE                         AmneziaVPN)
+set(CPACK_IFW_PACKAGE_NAME                          PowVPN)
+set(CPACK_IFW_PACKAGE_TITLE                         "Pow VPN")
 set(CPACK_IFW_PACKAGE_WIZARD_DEFAULT_WIDTH          600)
 set(CPACK_IFW_PACKAGE_WIZARD_DEFAULT_HEIGHT         380)
 set(CPACK_IFW_PACKAGE_WIZARD_STYLE                  Modern)
@@ -94,6 +96,8 @@ endif()
 
 include(CPackIFW)
 cpack_ifw_configure_component(AmneziaVPN
+    DISPLAY_NAME "Pow VPN"
+    DESCRIPTION "Pow VPN"
     VERSION ${AMNEZIAVPN_VERSION}
     RELEASE_DATE ${RELEASE_DATE}
     REQUIRES_ADMIN_RIGHTS
@@ -103,7 +107,7 @@ cpack_ifw_configure_component(AmneziaVPN
 
 include(CPack)
 cpack_add_component(Uninstall
-    DISPLAY_NAME "Uninstall AmneziaVPN"
+    DISPLAY_NAME "Uninstall Pow VPN"
     REQUIRES_ADMIN_RIGHTS
     DISABLED
 )

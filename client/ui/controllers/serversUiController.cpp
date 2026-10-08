@@ -231,8 +231,10 @@ bool ServersUiController::isDefaultServerDefaultContainerHasSplitTunneling() con
         auto hasSplitTunnelingFromAllowedIps = [](const QStringList& allowedIps, const QString& nativeConfig) -> bool {
             bool hasSplitTunneling = !allowedIps.isEmpty() && !allowedIps.contains("0.0.0.0/0");
             if (!hasSplitTunneling && !nativeConfig.isEmpty()) {
-                hasSplitTunneling = nativeConfig.contains("AllowedIPs") 
-                    && !nativeConfig.contains("AllowedIPs = 0.0.0.0/0, ::/0");
+                const bool hasIpv4DefaultRoute =
+                        nativeConfig.contains("AllowedIPs = 0.0.0.0/0");
+                hasSplitTunneling = nativeConfig.contains("AllowedIPs")
+                        && !hasIpv4DefaultRoute;
             }
             return hasSplitTunneling;
         };

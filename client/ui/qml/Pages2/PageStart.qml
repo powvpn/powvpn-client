@@ -70,11 +70,19 @@ PageType {
                 PageController.hideWindow()
                 return
             }
+            var closingPage = tabBarStackView.currentItem.objectName
             tabBarStackView.pop()
+            if (closingPage === PageController.getPagePath(PageEnum.PageAccountLogin)) {
+                tabBar.visible = !PageController.isStartPageVisible()
+            }
         }
 
         function onGoToPage(page, slide) {
             var pagePath = PageController.getPagePath(page)
+
+            if (page === PageEnum.PageAccountLogin) {
+                tabBar.visible = false
+            }
 
             if (slide) {
                 tabBarStackView.push(pagePath, { "objectName" : pagePath }, StackView.PushTransition)

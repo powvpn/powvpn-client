@@ -1,5 +1,6 @@
 #include <QCoreApplication>
 #include <QFileInfo>
+#include <QJsonDocument>
 #include <QProcess>
 
 #include <QThread>
@@ -15,6 +16,14 @@
 
 static Ikev2Protocol* self = nullptr;
 static std::mutex rasDialFuncMutex;
+
+namespace
+{
+QString psQuoted(QString value)
+{
+    return value.replace("'", "''");
+}
+}
 
 extern "C" {
 static void WINAPI RasDialFuncCallback(UINT unMsg,
@@ -44,7 +53,7 @@ void Ikev2Protocol::stop()
             setConnectionState(Vpn::ConnectionState::Error);
         }
         else {
-            setConnectionState(Vpn::ConnectionState::Disconnected);
+            setConnectionState(Vpn::ConnectionState::Error);
         }
     }
 }
@@ -174,10 +183,34 @@ void Ikev2Protocol::newConnectionStateEventReceived(UINT unMsg, tagRASCONNSTATE 
 void Ikev2Protocol::readIkev2Configuration(const QJsonObject &configuration)
 {
     m_config = configuration.value(ProtocolUtils::key_proto_config_data(Proto::Ikev2)).toObject();
+    const QString nativeConfig = m_config.value(configKey::config).toString();
+    if (!nativeConfig.isEmpty()) {
+        const QJsonDocument parsed = QJsonDocument::fromJson(nativeConfig.toUtf8());
+        if (parsed.isObject()) {
+            m_config = parsed.object();
+        }
+    }
 }
 
 ErrorCode Ikev2Protocol::start()
 {
+    const bool eapCredentials = m_config.value("eap").toBool()
+        || (m_config[configKey::cert].toString().isEmpty() && !m_config[configKey::userName].toString().isEmpty());
+    if (eapCredentials) {
+        setConnectionState(Vpn::ConnectionState::Connecting);
+        disconnect_vpn();
+        delete_vpn_connection(tunnelName());
+        if (!create_eap_vpn(tunnelName(), m_config[configKey::hostName].toString())) {
+            setLastError(ErrorCode::InternalError);
+            return ErrorCode::InternalError;
+        }
+        if (!connect_to_vpn(tunnelName())) {
+            setLastError(ErrorCode::InternalError);
+            return ErrorCode::InternalError;
+        }
+        return ErrorCode::NoError;
+    }
+
     QByteArray cert = QByteArray::fromBase64(m_config[configKey::cert].toString().toUtf8());
     setConnectionState(Vpn::ConnectionState::Connecting);
 
@@ -286,6 +319,32 @@ bool Ikev2Protocol::create_new_vpn(const QString & vpn_name,
         return true;
     return false;
 }
+
+bool Ikev2Protocol::create_eap_vpn(const QString &vpn_name, const QString &serverAddress)
+{
+    if (vpn_name.isEmpty() || serverAddress.isEmpty()) {
+        return false;
+    }
+
+    // Our managed IKEv2 servers authenticate with EAP-MSCHAPv2, not an
+    // individual P12 certificate. The server certificate must already be
+    // trusted by Windows; the client never weakens certificate validation.
+    const QString script = QStringLiteral(R"(
+$ErrorActionPreference = 'Stop'
+$name = '%1'
+$server = '%2'
+$eapConfig = @'
+<EapHostConfig xmlns="http://www.microsoft.com/provisioning/EapHostConfig"><EapMethod><Type xmlns="http://www.microsoft.com/provisioning/EapCommon">26</Type><VendorId xmlns="http://www.microsoft.com/provisioning/EapCommon">0</VendorId><VendorType xmlns="http://www.microsoft.com/provisioning/EapCommon">0</VendorType><AuthorId xmlns="http://www.microsoft.com/provisioning/EapCommon">0</AuthorId></EapMethod><Config xmlns="http://www.microsoft.com/provisioning/EapHostConfig"><Eap xmlns="http://www.microsoft.com/provisioning/BaseEapConnectionPropertiesV1"><Type>26</Type><EapType xmlns="http://www.microsoft.com/provisioning/MsChapV2ConnectionPropertiesV1"><UseWinLogonCredentials>false</UseWinLogonCredentials></EapType></Eap></Config></EapHostConfig>
+'@
+Remove-VpnConnection -Name $name -Force -ErrorAction SilentlyContinue
+Add-VpnConnection -Name $name -ServerAddress $server -TunnelType IKEv2 -EncryptionLevel Maximum -AuthenticationMethod Eap -EapConfigXmlStream $eapConfig -RememberCredential -Force | Out-Null
+Set-VpnConnectionIPsecConfiguration -ConnectionName $name -AuthenticationTransformConstants SHA256128 -CipherTransformConstants AES256 -EncryptionMethod AES256 -IntegrityCheckMethod SHA256 -DHGroup Group14 -PfsGroup PFS2048 -Force | Out-Null
+)").arg(psQuoted(vpn_name), psQuoted(serverAddress));
+
+    QProcess powershell;
+    powershell.start("powershell.exe", {"-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass", "-Command", script});
+    return powershell.waitForFinished(15000) && powershell.exitStatus() == QProcess::NormalExit && powershell.exitCode() == 0;
+}
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 bool Ikev2Protocol::delete_vpn_connection(const QString &vpn_name){
 
@@ -300,6 +359,14 @@ bool Ikev2Protocol::connect_to_vpn(const QString & vpn_name){
     memset(&RasDialParams, 0x0, sizeof(RASDIALPARAMS));
     RasDialParams.dwSize = sizeof(RASDIALPARAMS);
     wcscpy_s(RasDialParams.szEntryName, vpn_name.toStdWString().c_str());
+    const QString username = m_config[configKey::userName].toString();
+    const QString password = m_config[configKey::password].toString();
+    if (!username.isEmpty()) {
+        wcscpy_s(RasDialParams.szUserName, username.toStdWString().c_str());
+    }
+    if (!password.isEmpty()) {
+        wcscpy_s(RasDialParams.szPassword, password.toStdWString().c_str());
+    }
     auto ret = RasDial(NULL, NULL, &RasDialParams, 0,
                        &RasDialFuncCallback,
                        &hRasConn);

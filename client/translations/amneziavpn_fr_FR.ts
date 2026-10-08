@@ -429,8 +429,8 @@ Des conteneurs déjà installés ont été trouvés sur le serveur. Tous les con
     <message>
         <location filename="../ui/utils/notificationHandler.cpp" line="57"/>
         <location filename="../ui/utils/notificationHandler.cpp" line="64"/>
-        <source>AmneziaVPN</source>
-        <translation>AmneziaVPN</translation>
+        <source>Pow VPN</source>
+        <translation>Pow VPN</translation>
     </message>
     <message>
         <location filename="../ui/utils/notificationHandler.cpp" line="58"/>
@@ -444,8 +444,8 @@ Des conteneurs déjà installés ont été trouvés sur le serveur. Tous les con
     </message>
     <message>
         <location filename="../ui/utils/notificationHandler.cpp" line="88"/>
-        <source>AmneziaVPN notification</source>
-        <translation>Notification AmneziaVPN</translation>
+        <source>Pow VPN notification</source>
+        <translation>Notification Pow VPN</translation>
     </message>
     <message>
         <location filename="../ui/utils/notificationHandler.cpp" line="89"/>
@@ -3367,8 +3367,8 @@ Créez-en une à partir des paramètres actuels.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettings.qml" line="177"/>
-        <source>About AmneziaVPN</source>
-        <translation>À propos d&apos;AmneziaVPN</translation>
+        <source>About Pow VPN</source>
+        <translation>À propos d&apos;Pow VPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettings.qml" line="188"/>
@@ -3380,8 +3380,8 @@ Créez-en une à partir des paramètres actuels.</translation>
     <name>PageSettingsAbout</name>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="21"/>
-        <source>You have the latest version of AmneziaVPN</source>
-        <translation>Vous disposez de la dernière version d&apos;AmneziaVPN</translation>
+        <source>You have the latest version of Pow VPN</source>
+        <translation>Vous disposez de la dernière version d&apos;Pow VPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="25"/>
@@ -3657,8 +3657,8 @@ Créez-en une à partir des paramètres actuels.</translation>
     <name>PageSettingsApiNativeConfigs</name>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiNativeConfigs.qml" line="23"/>
-        <source>Save AmneziaVPN config</source>
-        <translation>Enregistrer la configuration AmneziaVPN</translation>
+        <source>Save Pow VPN config</source>
+        <translation>Enregistrer la configuration Pow VPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiNativeConfigs.qml" line="60"/>
@@ -3893,8 +3893,8 @@ Créez-en une à partir des paramètres actuels.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiSubscriptionKey.qml" line="121"/>
-        <source>Save AmneziaVPN config</source>
-        <translation>Enregistrer la configuration AmneziaVPN</translation>
+        <source>Save Pow VPN config</source>
+        <translation>Enregistrer la configuration Pow VPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiSubscriptionKey.qml" line="122"/>
@@ -4127,8 +4127,8 @@ Créez-en une à partir des paramètres actuels.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApplication.qml" line="264"/>
-        <source>All settings will be reset to default. All installed AmneziaVPN services will still remain on the server.</source>
-        <translation>Tous les paramètres seront réinitialisés par défaut. Tous les services AmneziaVPN installés resteront sur le serveur.</translation>
+        <source>All settings will be reset to default. All installed Pow VPN services will still remain on the server.</source>
+        <translation>Tous les paramètres seront réinitialisés par défaut. Tous les services Pow VPN installés resteront sur le serveur.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApplication.qml" line="265"/>
@@ -4165,8 +4165,8 @@ Créez-en une à partir des paramètres actuels.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsBackup.qml" line="88"/>
-        <source>The backup will contain your passwords and private keys for all servers added to AmneziaVPN. Keep this information in a secure place.</source>
-        <translation>La sauvegarde contiendra vos mots de passe et vos clés privées pour tous les serveurs ajoutés à AmneziaVPN. Conservez ces informations en lieu sûr.</translation>
+        <source>The backup will contain your passwords and private keys for all servers added to Pow VPN. Keep this information in a secure place.</source>
+        <translation>La sauvegarde contiendra vos mots de passe et vos clés privées pour tous les serveurs ajoutés à Pow VPN. Conservez ces informations en lieu sûr.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsBackup.qml" line="102"/>
@@ -4559,8 +4559,8 @@ Créez-en une à partir des paramètres actuels.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsLogging.qml" line="182"/>
-        <source>AmneziaVPN logs</source>
-        <translation>Journaux d&apos;AmneziaVPN</translation>
+        <source>Pow VPN logs</source>
+        <translation>Journaux d&apos;Pow VPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsLogging.qml" line="192"/>
@@ -4587,8 +4587,8 @@ Créez-en une à partir des paramètres actuels.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsLogging.qml" line="211"/>
-        <source>AmneziaVPN-service logs</source>
-        <translation>Journaux du service AmneziaVPN</translation>
+        <source>Pow VPN-service logs</source>
+        <translation>Journaux du service Pow VPN</translation>
     </message>
 </context>
 <context>
@@ -4669,8 +4669,8 @@ Créez-en une à partir des paramètres actuels.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsServerData.qml" line="147"/>
-        <source>All installed AmneziaVPN services will still remain on the server.</source>
-        <translation>Tous les services AmneziaVPN installés resteront sur le serveur.</translation>
+        <source>All installed Pow VPN services will still remain on the server.</source>
+        <translation>Tous les services Pow VPN installés resteront sur le serveur.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsServerData.qml" line="153"/>
@@ -5204,8 +5204,8 @@ Créez-en une à partir des paramètres actuels.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSetupWizardConfigSource.qml" line="304"/>
-        <source>Configure Amnezia VPN on your own server</source>
-        <translation>Configurer Amnezia VPN sur votre propre serveur</translation>
+        <source>Configure Pow VPN on your own server</source>
+        <translation>Configurer Pow VPN sur votre propre serveur</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSetupWizardConfigSource.qml" line="316"/>
@@ -5578,8 +5578,8 @@ Créez-en une à partir des paramètres actuels.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="51"/>
-        <source>Save AmneziaVPN config</source>
-        <translation>Enregistrer la configuration AmneziaVPN</translation>
+        <source>Save Pow VPN config</source>
+        <translation>Enregistrer la configuration Pow VPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="58"/>
@@ -5613,8 +5613,8 @@ Créez-en une à partir des paramètres actuels.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="108"/>
-        <source>For the AmneziaVPN app</source>
-        <translation>Pour l&apos;application AmneziaVPN</translation>
+        <source>For the Pow VPN app</source>
+        <translation>Pour l&apos;application Pow VPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="113"/>
@@ -5781,8 +5781,8 @@ Créez-en une à partir des paramètres actuels.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShareConnection.qml" line="30"/>
-        <source>Save AmneziaVPN config</source>
-        <translation>Enregistrer la configuration AmneziaVPN</translation>
+        <source>Save Pow VPN config</source>
+        <translation>Enregistrer la configuration Pow VPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShareConnection.qml" line="150"/>
@@ -6522,14 +6522,14 @@ Créez-en une à partir des paramètres actuels.</translation>
         <source>OpenVPN is one of the most popular and reliable VPN protocols. It uses SSL/TLS encryption, supports a wide variety of devices and operating systems, and is continuously improved by the community due to its open-source nature. It provides a good balance between speed and security but is easily recognized by DPI systems, making it susceptible to blocking.
 
 Features:
-* Available on all AmneziaVPN platforms
+* Available on all Pow VPN platforms
 * Normal battery consumption on mobile devices
 * Flexible customization for various devices and OS
 * Operates over both TCP and UDP protocols</source>
         <translation>OpenVPN est l&apos;un des protocoles VPN les plus populaires et les plus fiables. Il utilise le chiffrement SSL/TLS, prend en charge une grande variété d&apos;appareils et de systèmes d&apos;exploitation, et est continuellement amélioré par la communauté grâce à sa nature open source. Il offre un bon équilibre entre vitesse et sécurité, mais il est facilement reconnu par les systèmes DPI, ce qui le rend sensible au blocage.
 
 Caractéristiques :
-* Disponible sur toutes les plateformes AmneziaVPN
+* Disponible sur toutes les plateformes Pow VPN
 * Consommation de batterie normale sur les appareils mobiles
 * Personnalisation souple pour différents appareils et systèmes d&apos;exploitation
 * Fonctionne sur les protocoles TCP et UDP</translation>
@@ -6539,7 +6539,7 @@ Caractéristiques :
         <source>WireGuard is a modern, streamlined VPN protocol offering stable connectivity and excellent performance across all devices. It uses fixed encryption settings, delivering lower latency and higher data transfer speeds compared to OpenVPN. However, WireGuard is easily identifiable by DPI systems due to its distinctive packet signatures, making it susceptible to blocking.
 
 Features:
-* Available on all AmneziaVPN platforms
+* Available on all Pow VPN platforms
 * Low power consumption on mobile devices
 * Minimal configuration required
 * Easily detected by DPI systems (susceptible to blocking)
@@ -6547,7 +6547,7 @@ Features:
         <translation>WireGuard est un protocole VPN moderne et épuré qui offre une connectivité stable et d&apos;excellentes performances sur tous les appareils. Il utilise des paramètres de chiffrement fixes, ce qui réduit la latence et augmente les débits par rapport à OpenVPN. Cependant, WireGuard est facilement identifiable par les systèmes DPI en raison de la signature caractéristique de ses paquets, ce qui le rend sensible au blocage.
 
 Caractéristiques :
-* Disponible sur toutes les plateformes AmneziaVPN
+* Disponible sur toutes les plateformes Pow VPN
 * Faible consommation d&apos;énergie sur les appareils mobiles
 * Configuration minimale requise
 * Facilement détecté par les systèmes DPI (sensible au blocage)
@@ -6560,7 +6560,7 @@ Caractéristiques :
 AmneziaWG is an excellent choice for those seeking a fast, stealthy VPN connection.
 
 Features:
-* Available on all AmneziaVPN platforms
+* Available on all Pow VPN platforms
 * Low battery consumption on mobile devices
 * Minimal settings required
 * Undetectable by traffic analysis systems (DPI)
@@ -6570,7 +6570,7 @@ Features:
 AmneziaWG est un excellent choix pour qui recherche une connexion VPN rapide et discrète.
 
 Caractéristiques :
-* Disponible sur toutes les plateformes AmneziaVPN
+* Disponible sur toutes les plateformes Pow VPN
 * Faible consommation de batterie sur les appareils mobiles
 * Paramétrage minimal requis
 * Indétectable par les systèmes d&apos;analyse de trafic (DPI)
@@ -6602,7 +6602,7 @@ Caractéristiques :
         <source>IKEv2, combined with IPSec encryption, is a modern and reliable VPN protocol. It reconnects quickly when switching networks or devices, making it ideal for dynamic network environments. While it provides good security and speed, it&apos;s easily recognized by DPI systems and susceptible to blocking.
 
 Features:
-* Available in AmneziaVPN only on Windows
+* Available in Pow VPN only on Windows
 * Low battery consumption on mobile devices
 * Minimal configuration required
 * Detectable by DPI analysis systems(easily blocked)
@@ -6610,7 +6610,7 @@ Features:
         <translation>IKEv2, associé au chiffrement IPSec, est un protocole VPN moderne et fiable. Il se reconnecte rapidement lors d&apos;un changement de réseau ou d&apos;appareil, ce qui le rend idéal pour les environnements réseau changeants. Bien qu&apos;il offre une bonne sécurité et de bonnes performances, il est facilement reconnu par les systèmes DPI et sensible au blocage.
 
 Caractéristiques :
-* Disponible dans AmneziaVPN uniquement sous Windows
+* Disponible dans Pow VPN uniquement sous Windows
 * Faible consommation de batterie sur les appareils mobiles
 * Configuration minimale requise
 * Détectable par les systèmes d&apos;analyse DPI (facilement bloqué)

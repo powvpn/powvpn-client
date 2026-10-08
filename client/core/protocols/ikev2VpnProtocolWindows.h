@@ -41,7 +41,7 @@ public:
     ErrorCode start() override;
     void stop() override;
 
-    static QString tunnelName() { return "AmneziaVPN IKEv2"; }
+    static QString tunnelName() { return "Pow VPN IKEv2"; }
 
 public:
     void newConnectionStateEventReceived(UINT unMsg,
@@ -58,6 +58,7 @@ private:
     HRASCONN        hRasConn{nullptr};
     bool create_new_vpn(const QString & vpn_name,
                         const QString & serv_addr);
+    bool create_eap_vpn(const QString &vpn_name, const QString &serverAddress);
     bool delete_vpn_connection(const QString &vpn_name);
 
     bool connect_to_vpn(const QString & vpn_name);

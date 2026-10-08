@@ -4,6 +4,7 @@
     </qresource>
     <qresource prefix="/images">
         <file>amneziaBigLogo.png</file>
+        <file>powvpnWelcomeDark.png</file>
         <file>AmneziaVPN.png</file>
         <file>controls/alert-circle.svg</file>
         <file>update/updateHeroDark.jpg</file>

@@ -19,8 +19,6 @@ import "../Components"
 PageType {
     id: root
 
-    property var containersDropDownRef: null
-
     property var apiAvailableProtocols: []
     property string apiCurrentProtocol: ""
 
@@ -80,9 +78,6 @@ PageType {
 
         function onRestorePageHomeState(isContainerInstalled) {
             drawer.openTriggered()
-            if (isContainerInstalled && root.containersDropDownRef) {
-                root.containersDropDownRef.rootButtonClickedFunction()
-            }
         }
     }
 
@@ -490,81 +485,9 @@ PageType {
                 anchors.right: parent.right
                 anchors.left: parent.left
 
-                RowLayout {
-                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-                    spacing: 8
-
-                    visible: !ServersUiController.isDefaultServerFromApi
-
-                    DropDownType {
-                        id: containersDropDown
-                        objectName: "containersDropDown"
-
-                        Component.onCompleted: root.containersDropDownRef = containersDropDown
-
-                        rootButtonImageColor: AmneziaStyle.color.midnightBlack
-                        rootButtonBackgroundColor: AmneziaStyle.color.paleGray
-                        rootButtonBackgroundHoveredColor: AmneziaStyle.color.mistyGray
-                        rootButtonBackgroundPressedColor: AmneziaStyle.color.cloudyGray
-                        rootButtonHoveredBorderColor: AmneziaStyle.color.transparent
-                        rootButtonDefaultBorderColor: AmneziaStyle.color.transparent
-                        rootButtonTextTopMargin: 8
-                        rootButtonTextBottomMargin: 8
-
-                        enabled: drawer.isOpened
-
-                        text: ServersUiController.defaultServerDefaultContainerName
-                        textColor: AmneziaStyle.color.midnightBlack
-                        headerText: qsTr("VPN protocol")
-                        headerBackButtonImage: "qrc:/images/controls/arrow-left.svg"
-
-                        rootButtonClickedFunction: function() {
-                            containersDropDown.openTriggered()
-                        }
-
-                        drawerParent: root
-
-                        listView: HomeContainersListView {
-                            id: containersListView
-                            objectName: "containersListView"
-
-                            rootWidth: root.width
-
-                            Connections {
-                                objectName: "rowLayoutConnections"
-
-                                target: ServersUiController
-
-                                function onDefaultServerIdChanged() {
-                                    updateContainersModelFilters()
-                                }
-                            }
-
-                            function updateContainersModelFilters() {
-                                if (ServersUiController.isServerHasWriteAccess(ServersUiController.defaultServerId)) {
-                                    proxyDefaultServerContainersModel.filters = ContainersModelFilters.getWriteAccessProtocolsListFilters()
-                                } else {
-                                    proxyDefaultServerContainersModel.filters = ContainersModelFilters.getReadAccessProtocolsListFilters()
-                                }
-                            }
-
-                            model: SortFilterProxyModel {
-                                id: proxyDefaultServerContainersModel
-                                sourceModel: DefaultServerContainersModel
-
-                                sorters: [
-                                    RoleSorter { roleName: "isInstalled"; sortOrder: Qt.DescendingOrder }
-                                ]
-                            }
-
-                            Component.onCompleted: updateContainersModelFilters()
-                        }
-                    }
-                }
-
                 Header2Type {
                     Layout.fillWidth: true
-                    Layout.topMargin: 48
+                    Layout.topMargin: 16
                     Layout.leftMargin: 16
                     Layout.rightMargin: 16
 

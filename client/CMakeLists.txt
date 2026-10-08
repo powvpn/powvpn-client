@@ -318,3 +318,28 @@ endif()
 if(AMNEZIA_BUILD_TESTS)
     add_subdirectory(tests)
 endif()
+
+
+# Pow VPN managed-service overlay
+target_sources(${PROJECT} PRIVATE
+    ${CMAKE_CURRENT_LIST_DIR}/core/managed/managedApiClient.h
+    ${CMAKE_CURRENT_LIST_DIR}/core/managed/managedApiClient.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/core/managed/managedServiceController.h
+    ${CMAKE_CURRENT_LIST_DIR}/core/managed/managedServiceController.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/core/managed/managedConnectionAdapter.h
+    ${CMAKE_CURRENT_LIST_DIR}/core/managed/managedConnectionAdapter.cpp
+)
+
+
+# Pow VPN browser-extension Native Messaging host
+include(${CMAKE_CURRENT_LIST_DIR}/CMakeLists.browserTunnel.cmake)
+install(TARGETS pow-native-host
+    DESTINATION ${CMAKE_INSTALL_BINDIR}
+    COMPONENT AmneziaVPN
+)
+
+
+target_sources(${PROJECT} PRIVATE
+    ${CMAKE_CURRENT_LIST_DIR}/core/browserTunnel/browserTunnelController.h
+    ${CMAKE_CURRENT_LIST_DIR}/core/browserTunnel/browserTunnelController.cpp
+)

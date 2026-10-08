@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.25.0 FATAL_ERROR)
 
-set(PROJECT AmneziaVPN-service)
+if(NOT CLIENT_SERVICE_NAME)
+    set(CLIENT_SERVICE_NAME "PowVPN-service")
+endif()
+set(PROJECT ${CLIENT_SERVICE_NAME})
 project(${PROJECT} VERSION ${AMNEZIAVPN_VERSION})
 
 if (APPLE)
@@ -382,7 +385,7 @@ if(LINUX)
 elseif(APPLE)
     file(GENERATE OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/set_openvpn_rpath.cmake CONTENT
 [=[
-set(ovpn "$<TARGET_FILE_DIR:AmneziaVPN-service>/openvpn")
+set(ovpn "$<TARGET_FILE_DIR:PowVPN-service>/openvpn")
 set(dir "$<TARGET_FILE_DIR:OpenSSL::SSL>")
 execute_process(COMMAND install_name_tool -delete_rpath "${dir}" "${ovpn}" ERROR_QUIET)
 execute_process(COMMAND install_name_tool -add_rpath "${dir}" "${ovpn}")

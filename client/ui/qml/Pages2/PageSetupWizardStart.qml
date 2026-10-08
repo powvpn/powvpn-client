@@ -21,14 +21,22 @@ PageType {
         anchors.fill: parent
         spacing: 0
 
-        Image {
-            id: image
-            source: "qrc:/images/amneziaBigLogo.png"
-
+        Item {
+            id: brandHero
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
             Layout.topMargin: 32 + PageController.safeAreaTopMargin
             Layout.preferredWidth: 360
             Layout.preferredHeight: 287
+
+            Image {
+                anchors.horizontalCenter: parent.horizontalCenter
+                y: 66
+                width: 332
+                height: 100
+                source: "qrc:/images/powvpnWelcomeDark.png"
+                fillMode: Image.PreserveAspectFit
+                smooth: true
+            }
         }
 
         BasicButtonType {

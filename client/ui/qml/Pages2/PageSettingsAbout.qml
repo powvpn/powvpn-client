@@ -18,7 +18,7 @@ PageType {
         target: UpdateController
 
         function onUpdateNotFound() {
-            PageController.showNotificationMessage(qsTr("You have the latest version of AmneziaVPN"))
+            PageController.showNotificationMessage(qsTr("You have the latest version of Pow VPN"))
         }
 
         function onUpdateCheckFailed() {
@@ -54,7 +54,7 @@ PageType {
 
             Image {
                 id: image
-                source: "qrc:/images/amneziaBigLogo.png"
+                source: "qrc:/images/powvpnWelcomeDark.png"
 
                 Layout.alignment: Qt.AlignCenter
                 Layout.topMargin: 16
@@ -70,7 +70,7 @@ PageType {
                 Layout.leftMargin: 16
                 Layout.rightMargin: 16
 
-                text: qsTr("Support Amnezia")
+                text: qsTr("About Pow VPN")
                 horizontalAlignment: Text.AlignHCenter
             }
 
@@ -85,7 +85,7 @@ PageType {
                 height: 20
                 font.pixelSize: 14
 
-                text: qsTr("Amnezia is a free and open-source application. You can support the developers if you like it.")
+                text: qsTr("Pow VPN is a fast, reliable, and private VPN service.")
                 color: AmneziaStyle.color.paleGray
             }
 

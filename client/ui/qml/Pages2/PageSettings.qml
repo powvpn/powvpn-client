@@ -107,7 +107,6 @@ PageType {
         application,
         news,
         backup,
-        about,
         devConsole
     ]
 
@@ -168,17 +167,6 @@ PageType {
         property bool isVisible: true
         readonly property var clickedHandler: function() {
             PageController.goToPage(PageEnum.PageSettingsBackup)
-        }
-    }
-
-    QtObject {
-        id: about
-
-        property string title: qsTr("About AmneziaVPN")
-        readonly property string leftImagePath: "qrc:/images/controls/amnezia.svg"
-        property bool isVisible: true
-        readonly property var clickedHandler: function() {
-            PageController.goToPage(PageEnum.PageSettingsAbout)
         }
     }
 

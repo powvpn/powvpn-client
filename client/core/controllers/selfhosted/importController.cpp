@@ -529,10 +529,14 @@ QJsonObject ImportController::extractOpenVpnConfig(const QString &data) const
 QJsonObject ImportController::extractWireGuardConfig(const QString &data, ConfigTypes &configType) const
 {
     QMap<QString, QString> configMap;
+    QString displayName;
     auto configByLines = data.split("\n");
     for (const QString &line : configByLines) {
         QString trimmedLine = line.trimmed();
-        if (trimmedLine.startsWith("[") && trimmedLine.endsWith("]")) {
+        static const QString totalProNamePrefix = QStringLiteral("# Pow VPN: ");
+        if (trimmedLine.startsWith(totalProNamePrefix)) {
+            displayName = trimmedLine.mid(totalProNamePrefix.size()).trimmed();
+        } else if (trimmedLine.startsWith("[") && trimmedLine.endsWith("]")) {
             continue;
         } else {
             const qsizetype separatorIndex = trimmedLine.indexOf('=');
@@ -640,7 +644,7 @@ QJsonObject ImportController::extractWireGuardConfig(const QString &data, Config
     QJsonObject config;
     config[configKey::containers] = arr;
     config[configKey::defaultContainer] = containerName;
-    config[configKey::description] = m_serversRepository->nextAvailableServerName();
+    config[configKey::description] = displayName.isEmpty() ? m_serversRepository->nextAvailableServerName() : displayName;
 
     const static QRegularExpression dnsRegExp(
             "DNS = "

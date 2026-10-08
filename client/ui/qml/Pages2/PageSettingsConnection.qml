@@ -56,32 +56,13 @@ PageType {
 
             width: listView.width
 
-            SwitcherType {
-                id: amneziaDnsSwitch
-
-                Layout.fillWidth: true
-                Layout.margins: 16
-
-                text: qsTr("Use AmneziaDNS")
-                descriptionText: qsTr("If AmneziaDNS is installed on the server")
-
-                checked: SettingsController.isAmneziaDnsEnabled()
-                onToggled: function() {
-                    if (checked !== SettingsController.isAmneziaDnsEnabled()) {
-                        SettingsController.toggleAmneziaDns(checked)
-                    }
-                }
-            }
-
-            DividerType {}
-
             LabelWithButtonType {
                 id: dnsServersButton
 
                 Layout.fillWidth: true
 
                 text: qsTr("DNS servers")
-                descriptionText: qsTr("When AmneziaDNS is not used or installed")
+                descriptionText: qsTr("Configure custom DNS servers")
                 rightImageSource: "qrc:/images/controls/chevron-right.svg"
 
                 clickedFunction: function() {

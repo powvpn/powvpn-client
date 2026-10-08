@@ -10,6 +10,12 @@
 #include "core/controllers/coreSignalHandlers.h"
 #include "logger.h"
 #include "secureQSettings.h"
+
+#include <QSysInfo>
+#include <QUrl>
+#include "core/managed/managedServiceController.h"
+#include "core/managed/managedConnectionAdapter.h"
+#include "core/browserTunnel/browserTunnelController.h"
 #include "core/utils/appUiConfig.h"
 
 #if defined(Q_OS_ANDROID)
@@ -168,6 +174,17 @@ void CoreController::initCoreControllers()
     m_exportController = new ExportController(m_serversRepository, m_appSettingsRepository, this);
     m_importCoreController = new ImportController(m_serversRepository, m_appSettingsRepository, this);
     m_connectionController = new ConnectionController(m_serversRepository, m_appSettingsRepository, m_vpnConnection.get(), this);
+
+    // Pow VPN managed-service integration: bridges /api/v1/client/allocate
+    // to the pipeline above (see client-overlay/INTEGRATION.md).
+    m_managedServiceController = new ManagedServiceController(this);
+    m_managedServiceController->setApiBaseUrl(QUrl(QStringLiteral("https://powvpn.com")));
+    m_managedServiceController->setPlatformInfo(QSysInfo::productType(), QCoreApplication::applicationVersion());
+    m_managedConnectionAdapter = new ManagedConnectionAdapter(m_importCoreController, m_serversRepository,
+                                                              m_connectionController, m_managedServiceController, this);
+    m_managedServiceController->bootstrap();
+    m_browserTunnelController = new BrowserTunnelController(m_managedConnectionAdapter, this);
+    m_browserTunnelController->start();
     m_settingsController = new SettingsController(m_serversRepository, m_appSettingsRepository, this);
 }
 
@@ -193,6 +210,9 @@ void CoreController::initControllers()
 
     m_importController = new ImportUiController(m_importCoreController, this);
     setQmlContextProperty("ImportController", m_importController);
+
+    setQmlContextProperty("ManagedServiceController", m_managedServiceController);
+    setQmlContextProperty("ManagedConnectionAdapter", m_managedConnectionAdapter);
 
     m_exportUiController = new ExportUiController(m_exportController, this);
     setQmlContextProperty("ExportController", m_exportUiController);

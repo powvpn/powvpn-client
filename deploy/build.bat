@@ -3,6 +3,7 @@ setlocal EnableDelayedExpansion
 
 set "PROJECT_DIR=%cd%"
 set "BUILD_DIR=%PROJECT_DIR%\deploy\build"
+set "QT_ROOT_PATH=E:\Qt\6.11.2"
 
 :parse_args
 if "%~1"=="" goto :done_args
@@ -39,7 +40,7 @@ if not defined _vcvars_arg  (
 if not defined QT_VERSION  set "QT_VERSION=6.*"
 if not defined QIF_VERSION set "QIF_VERSION=*"
 
-set "_qt_bases=%USERPROFILE%\Qt C:\Qt"
+set "_qt_bases=E:\Qt %USERPROFILE%\Qt C:\Qt"
 if defined QT_INSTALL_DIR set "_qt_bases=%QT_INSTALL_DIR%\Qt %_qt_bases%"
 
 :: search over Qt dirs to find framework and tools paths
@@ -99,8 +100,21 @@ if exist "%VCVARS_PATH%" (
 set "_tests_arg="
 if defined AMNEZIA_BUILD_TESTS set "_tests_arg=-DAMNEZIA_BUILD_TESTS=%AMNEZIA_BUILD_TESTS%"
 @echo on
-cmake -S "%PROJECT_DIR%" -B "%BUILD_DIR%" -DCMAKE_BUILD_TYPE=Release "-DCMAKE_PREFIX_PATH=%QT_ROOT_PATH%\msvc2022_%_qt_postfix_arg%" "-DCMAKE_VS_GLOBALS=UseMultiToolTask=true;EnforceProcessCountAcrossBuilds=true" %_tests_arg% || goto :fail
+cmake -S "%PROJECT_DIR%" -B "%BUILD_DIR%" -DCMAKE_BUILD_TYPE=Release "-DCMAKE_PREFIX_PATH=%QT_ROOT_PATH%\msvc2022_%_qt_postfix_arg%" "-DCMAKE_VS_GLOBALS=UseMultiToolTask=true;EnforceProcessCountAcrossBuilds=true" -DCLIENT_TARGET_NAME=PowVPN -DCLIENT_APPLICATION_NAME="Pow VPN" -DCLIENT_SERVICE_NAME=PowVPN-service -DCLIENT_ORGANIZATION_NAME=PowVPN -DCLIENT_APP_INSTANCE_NAME=PowVPNInstance -DCLIENT_KEYCHAIN_NAME=PowVPN-Keychain %_tests_arg% || goto :fail
 cmake --build "%BUILD_DIR%" --config Release -- /m  || goto :fail
+if /i "%ARCH%" == "amd64" (
+    set "_client_release_dir=%BUILD_DIR%\client\Release"
+    set "_windeployqt=%QT_ROOT_PATH%\msvc2022_%_qt_postfix_arg%\bin\windeployqt.exe"
+    if not exist "!_windeployqt!" (
+        echo ERROR: windeployqt was not found at "!_windeployqt!"
+        goto :fail
+    )
+    if not exist "!_client_release_dir!\PowVPN.exe" (
+        echo ERROR: PowVPN.exe was not produced by the build
+        goto :fail
+    )
+    "!_windeployqt!" --release --qmldir "%PROJECT_DIR%\client\ui\qml" --dir "!_client_release_dir!" "!_client_release_dir!\PowVPN.exe" || goto :fail
+)
 @echo off
 for %%I in (%ARG_BUILD_INSTALLERS%) do (
     if /i "%%I" == "ifw" call :do_ifw
@@ -112,7 +126,16 @@ goto :eof
 :: bakes IFW installer
 :do_ifw
 @echo on
-cd "%BUILD_DIR%" && cpack -G IFW -D "QTIFWDIR=%QIF_ROOT_PATH%" || goto :fail
+set "_cpack_exe=%ProgramFiles%\CMake\bin\cpack.exe"
+if not exist "%_cpack_exe%" set "_cpack_exe=cpack.exe"
+cd /d "%BUILD_DIR%" && "%_cpack_exe%" -G IFW -D "QTIFWDIR=%QIF_ROOT_PATH%" || goto :fail
+for /f "delims=" %%I in ('findstr /B "set(CPACK_PACKAGE_FILE_NAME " "CPackConfig.cmake"') do set "_cpack_package_line=%%I"
+set "_ifw_package=!_cpack_package_line:set(CPACK_PACKAGE_FILE_NAME =!"
+set "_ifw_package=!_ifw_package:"=!"
+set "_ifw_package=!_ifw_package:)=!"
+if not exist "%BUILD_DIR%\!_ifw_package!.exe" (
+    "%QIF_ROOT_PATH%\bin\binarycreator.exe" --offline-only -c "%BUILD_DIR%\_CPack_Packages\win64\IFW\!_ifw_package!\config\config.xml" -p "%BUILD_DIR%\_CPack_Packages\win64\IFW\!_ifw_package!\packages" "%BUILD_DIR%\!_ifw_package!.exe" || goto :fail
+)
 @echo off
 goto :eof
 

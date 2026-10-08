@@ -121,10 +121,13 @@ captures/
 *.iml
 .idea/
 
-# Keystore files
-# Uncomment the following lines if you do not want to check your keystore files in.
-#*.jks
-#*.keystore
+# Signing keys and credentials must never be committed.
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
 
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
@@ -146,3 +149,19 @@ macos-with-sign-build.sh
 DeveloperIdApplicationCertificate.p12
 DeveloperIdInstallerCertificate.p12
 
+# Pow VPN local build and migration artifacts
+/_codex-backup-before-506/
+/client/VPN/
+/deploy/build.~bat
+/*Config.cmake
+/*ConfigVersion.cmake
+/*Targets.cmake
+/*Targets-*.cmake
+/*-config.cmake
+/*-config-version.cmake
+/*-Targets-*.cmake
+/conan_cmakedeps_paths.cmake
+/conanbuild*.bat
+/conanrun*.bat
+/deactivate_conanbuild.bat
+/deactivate_conanrun.bat

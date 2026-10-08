@@ -17,6 +17,7 @@ PageType {
     id: root
 
     property bool isRestoringBackup: false
+    property bool pendingAccountKeyNavigation: false
 
     Connections {
         target: ImportController
@@ -106,11 +107,11 @@ PageType {
                             clickedFunction: function() {
                                 var fileName = ""
                                 if (GC.isMobile()) {
-                                    fileName = "AmneziaVPN.log"
+                                    fileName = "Pow VPN.log"
                                 } else {
                                     fileName = SystemController.getFileName(qsTr("Save"),
                                                                             qsTr("Logs files (*.log)"),
-                                                                            StandardPaths.standardLocations(StandardPaths.DocumentsLocation) + "/AmneziaVPN",
+                                                                            StandardPaths.standardLocations(StandardPaths.DocumentsLocation) + "/Pow VPN",
                                                                             true,
                                                                             ".log")
                                 }
@@ -190,7 +191,9 @@ PageType {
                 text: qsTr("Continue")
 
                 clickedFunc: function() {
-                    if (ImportController.extractConfigFromData(textKey.textField.text)) {
+                    if (ManagedServiceController.importAccountKey(textKey.textField.text)) {
+                        root.pendingAccountKeyNavigation = true
+                    } else if (ImportController.extractConfigFromData(textKey.textField.text)) {
                         PageController.goToPage(PageEnum.PageSetupWizardViewConfig)
                     }
                 }
@@ -257,81 +260,36 @@ PageType {
                 disabledColor: AmneziaStyle.color.mutedGray
                 textColor: AmneziaStyle.color.goldenApricot
 
-                text: qsTr("Site Amnezia")
+                text: qsTr("Pow VPN")
 
                 rightImageSource: "qrc:/images/controls/external-link.svg"
 
                 clickedFunc: function() {
-                    Qt.openUrlExternally(LanguageUiController.getCurrentSiteUrl())
+                    Qt.openUrlExternally("https://powvpn.com")
                 }
             }
         }
     }
 
     property list<QtObject> variants: [
-        amneziaVpn,
-        selfHostVpn,
-        backupRestore,
+        accountLogin,
         fileOpen,
         qrScan,
-        restorePurchases,
-        siteLink
+        restorePurchases
     ]
     
     QtObject {
-        id: amneziaVpn
-
-        property string title: qsTr("VPN by Amnezia")
-        property string description: qsTr("The easiest way to connect to the VPN")
-        property string imageSource: "qrc:/images/controls/amnezia.svg"
-        property bool featuredAmneziaConnection: true
-        property bool isVisible: true
-        property var handler: function() {
-            PageController.showBusyIndicator(true)
-            var result = SubscriptionUiController.fillAvailableServices()
-            PageController.showBusyIndicator(false)
-            if (result) {
-                PageController.goToPage(PageEnum.PageSetupWizardApiServicesList)
-            }
-        }
-    }
-
-    QtObject {
-        id: selfHostVpn
+        id: accountLogin
 
         property bool featuredAmneziaConnection: false
-        property string title: qsTr("Self-hosted VPN")
-        property string description: qsTr("Configure Amnezia VPN on your own server")
-        property string imageSource: "qrc:/images/controls/server.svg"
+        property string title: qsTr("Authorization")
+        property string description: ManagedServiceController.accountEmail.length > 0
+                                     ? qsTr("Signed in as %1").arg(ManagedServiceController.accountEmail)
+                                     : qsTr("")
+        property string imageSource: "qrc:/images/controls/mail.svg"
         property bool isVisible: true
         property var handler: function() {
-            PageController.goToPage(PageEnum.PageSetupWizardCredentials)
-        }
-    }
-
-    QtObject {
-        id: backupRestore
-
-        property bool featuredAmneziaConnection: false
-        property string title: qsTr("Restore from backup")
-        property string description: qsTr("")
-        property string imageSource: "qrc:/images/controls/archive-restore.svg"
-        property bool isVisible: PageController.isStartPageVisible()
-        property var handler: function() {
-            if (root.isRestoringBackup) {
-                return
-            }
-            var filePath = SystemController.getFileName(qsTr("Open backup file"),
-                                                        qsTr("Backup files (*.backup)"))
-            if (filePath !== "") {
-                root.isRestoringBackup = true
-                PageController.showBusyIndicator(true)
-                Qt.callLater(function() {
-                    SettingsController.restoreAppConfig(filePath)
-                    PageController.showBusyIndicator(false)
-                    root.isRestoringBackup = false
-                })
-            }
+            PageController.goToPage(PageEnum.PageAccountLogin)
         }
     }
 
@@ -385,16 +343,14 @@ PageType {
         }
     }
 
-    QtObject {
-        id: siteLink
+    Connections {
+        target: ManagedConnectionAdapter
 
-        property bool featuredAmneziaConnection: false
-        property string title: qsTr("I have nothing")
-        property string description: qsTr("")
-        property string imageSource: "qrc:/images/controls/help-circle.svg"
-        property bool isVisible: PageController.isStartPageVisible() && Qt.platform.os !== "ios" && !IsMacOsNeBuild
-        property var handler: function() {
-            Qt.openUrlExternally(LanguageUiController.getCurrentSiteUrl())
+        function onManagedProfilesReady() {
+            if (root.pendingAccountKeyNavigation) {
+                root.pendingAccountKeyNavigation = false
+                PageController.goToPageHome()
+            }
         }
     }
 }

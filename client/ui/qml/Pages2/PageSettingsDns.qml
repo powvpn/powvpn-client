@@ -64,7 +64,7 @@ PageType {
                 Layout.leftMargin: 16
                 Layout.rightMargin: 16
                 
-                text: qsTr("If AmneziaDNS is not used or installed")
+                text: qsTr("If private DNS is not used or installed")
             }
         }
 

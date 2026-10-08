@@ -443,4 +443,3 @@ void CoreSignalHandlers::initUpdateFoundHandler()
         emit m_coreController->m_pageController->goToPage(PageLoader::PageEnum::PageUpdate);
     });
 }
-

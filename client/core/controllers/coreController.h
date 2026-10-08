@@ -48,6 +48,10 @@
 #include "core/repositories/secureAppSettingsRepository.h"
 #include "secureQSettings.h"
 
+class ManagedServiceController;
+class ManagedConnectionAdapter;
+class BrowserTunnelController;
+
 #include "ui/models/allowedDnsModel.h"
 #include "ui/models/containersModel.h"
 #include "ui/models/languageModel.h"
@@ -197,6 +201,9 @@ private:
     InstallController* m_installController;
     ExportController* m_exportController;
     ConnectionController* m_connectionController;
+    ManagedServiceController* m_managedServiceController = nullptr;
+    ManagedConnectionAdapter* m_managedConnectionAdapter = nullptr;
+    BrowserTunnelController* m_browserTunnelController = nullptr;
     SettingsController* m_settingsController;
 
     ContainersModel* m_containersModel;

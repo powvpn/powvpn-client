@@ -73,11 +73,7 @@ LanguageSettings::AvailableLanguageEnum LanguageUiController::getSystemLanguageE
 
 QString LanguageUiController::getCurrentSiteUrl(const QString &path) const
 {
-    auto locale = m_settingsController->getAppLanguage();
-    if (locale.language() == QLocale::Russian) {
-        return "https://storage.googleapis.com/amnezia/amnezia.org?utm_source=app&utm_campaign=amnezia_hello" + (path.isEmpty() ? "" : (QString("?m-path=/%1").arg(path)));
-    }
-    return QString("https://amnezia.org?utm_source=app&utm_campaign=amnezia_hello") + (path.isEmpty() ? "" : (QString("/%1").arg(path)));
+    return QStringLiteral("https://powvpn.com") + (path.isEmpty() ? QString() : QStringLiteral("/") + path);
 }
 
 QString LanguageUiController::getCurrentDocsUrl(const QString &path) const
