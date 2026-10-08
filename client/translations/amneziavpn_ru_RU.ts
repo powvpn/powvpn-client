@@ -8,8 +8,8 @@
         <translation>Авторизация</translation>
     </message>
     <message>
-        <source>Sign in to sync all available Pow VPN locations with this device.</source>
-        <translation>Войдите, чтобы синхронизировать с этим устройством все доступные локации Pow VPN.</translation>
+        <source>Sign in to sync all available PowVPN locations with this device.</source>
+        <translation>Войдите, чтобы синхронизировать с этим устройством все доступные локации PowVPN.</translation>
     </message>
     <message>
         <source>Email</source>
@@ -39,12 +39,12 @@
 <context>
     <name>AccountLoginDialog</name>
     <message>
-        <source>Sign in to Pow VPN</source>
-        <translation>Авторизация в Pow VPN</translation>
+        <source>Sign in to PowVPN</source>
+        <translation>Авторизация в PowVPN</translation>
     </message>
     <message>
-        <source>Use your Pow VPN account to sync locations and connect.</source>
-        <translation>Войдите в учетную запись Pow VPN, чтобы синхронизировать локации и подключиться.</translation>
+        <source>Use your PowVPN account to sync locations and connect.</source>
+        <translation>Войдите в учетную запись PowVPN, чтобы синхронизировать локации и подключиться.</translation>
     </message>
     <message>
         <source>Email</source>
@@ -500,8 +500,8 @@ Already installed containers were found on the server. All installed containers 
     <message>
         <location filename="../ui/utils/notificationHandler.cpp" line="57"/>
         <location filename="../ui/utils/notificationHandler.cpp" line="64"/>
-        <source>Pow VPN</source>
-        <translation>Pow VPN</translation>
+        <source>PowVPN</source>
+        <translation>PowVPN</translation>
     </message>
     <message>
         <location filename="../ui/utils/notificationHandler.cpp" line="58"/>
@@ -515,8 +515,8 @@ Already installed containers were found on the server. All installed containers 
     </message>
     <message>
         <location filename="../ui/utils/notificationHandler.cpp" line="88"/>
-        <source>Pow VPN notification</source>
-        <translation>Уведомление Pow VPN</translation>
+        <source>PowVPN notification</source>
+        <translation>Уведомление PowVPN</translation>
     </message>
     <message>
         <location filename="../ui/utils/notificationHandler.cpp" line="89"/>
@@ -3438,8 +3438,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettings.qml" line="177"/>
-        <source>About Pow VPN</source>
-        <translation>Об Pow VPN</translation>
+        <source>About PowVPN</source>
+        <translation>Об PowVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettings.qml" line="188"/>
@@ -3451,8 +3451,8 @@ Create one from the current settings.</source>
     <name>PageSettingsAbout</name>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="21"/>
-        <source>You have the latest version of Pow VPN</source>
-        <translation>У вас установлена последняя версия Pow VPN</translation>
+        <source>You have the latest version of PowVPN</source>
+        <translation>У вас установлена последняя версия PowVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="25"/>
@@ -3728,8 +3728,8 @@ Create one from the current settings.</source>
     <name>PageSettingsApiNativeConfigs</name>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiNativeConfigs.qml" line="23"/>
-        <source>Save Pow VPN config</source>
-        <translation>Сохранить конфигурацию Pow VPN</translation>
+        <source>Save PowVPN config</source>
+        <translation>Сохранить конфигурацию PowVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiNativeConfigs.qml" line="60"/>
@@ -3964,8 +3964,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiSubscriptionKey.qml" line="121"/>
-        <source>Save Pow VPN config</source>
-        <translation>Сохранить конфигурацию Pow VPN</translation>
+        <source>Save PowVPN config</source>
+        <translation>Сохранить конфигурацию PowVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiSubscriptionKey.qml" line="122"/>
@@ -4198,8 +4198,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApplication.qml" line="264"/>
-        <source>All settings will be reset to default. All installed Pow VPN services will still remain on the server.</source>
-        <translation>Все настройки будут сброшены до значений по умолчанию. Все установленные сервисы Pow VPN останутся на сервере.</translation>
+        <source>All settings will be reset to default. All installed PowVPN services will still remain on the server.</source>
+        <translation>Все настройки будут сброшены до значений по умолчанию. Все установленные сервисы PowVPN останутся на сервере.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApplication.qml" line="265"/>
@@ -4236,8 +4236,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsBackup.qml" line="88"/>
-        <source>The backup will contain your passwords and private keys for all servers added to Pow VPN. Keep this information in a secure place.</source>
-        <translation>Резервная копия будет содержать ваши пароли и закрытые ключи для всех серверов, добавленных в Pow VPN. Храните эту информацию в надежном месте.</translation>
+        <source>The backup will contain your passwords and private keys for all servers added to PowVPN. Keep this information in a secure place.</source>
+        <translation>Резервная копия будет содержать ваши пароли и закрытые ключи для всех серверов, добавленных в PowVPN. Храните эту информацию в надежном месте.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsBackup.qml" line="102"/>
@@ -4630,8 +4630,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsLogging.qml" line="182"/>
-        <source>Pow VPN logs</source>
-        <translation>Pow VPN logs</translation>
+        <source>PowVPN logs</source>
+        <translation>PowVPN logs</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsLogging.qml" line="192"/>
@@ -4658,8 +4658,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsLogging.qml" line="211"/>
-        <source>Pow VPN-service logs</source>
-        <translation>Pow VPN-service logs</translation>
+        <source>PowVPN-service logs</source>
+        <translation>PowVPN-service logs</translation>
     </message>
 </context>
 <context>
@@ -4740,7 +4740,7 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsServerData.qml" line="147"/>
-        <source>All installed Pow VPN services will still remain on the server.</source>
+        <source>All installed PowVPN services will still remain on the server.</source>
         <translation>Все установленные сервисы и протоколы Amnezia останутся на сервере.</translation>
     </message>
     <message>
@@ -5282,7 +5282,7 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSetupWizardConfigSource.qml" line="304"/>
-        <source>Configure Pow VPN on your own server</source>
+        <source>Configure PowVPN on your own server</source>
         <translation>Настроить VPN на собственном сервере</translation>
     </message>
     <message>
@@ -5656,8 +5656,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="51"/>
-        <source>Save Pow VPN config</source>
-        <translation>Сохранить конфигурацию Pow VPN</translation>
+        <source>Save PowVPN config</source>
+        <translation>Сохранить конфигурацию PowVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="58"/>
@@ -5691,8 +5691,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="108"/>
-        <source>For the Pow VPN app</source>
-        <translation>Для приложения Pow VPN</translation>
+        <source>For the PowVPN app</source>
+        <translation>Для приложения PowVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="113"/>
@@ -5859,8 +5859,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShareConnection.qml" line="30"/>
-        <source>Save Pow VPN config</source>
-        <translation>Сохранить конфигурацию Pow VPN</translation>
+        <source>Save PowVPN config</source>
+        <translation>Сохранить конфигурацию PowVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShareConnection.qml" line="150"/>
@@ -6600,14 +6600,14 @@ Create one from the current settings.</source>
         <source>OpenVPN is one of the most popular and reliable VPN protocols. It uses SSL/TLS encryption, supports a wide variety of devices and operating systems, and is continuously improved by the community due to its open-source nature. It provides a good balance between speed and security but is easily recognized by DPI systems, making it susceptible to blocking.
 
 Features:
-* Available on all Pow VPN platforms
+* Available on all PowVPN platforms
 * Normal battery consumption on mobile devices
 * Flexible customization for various devices and OS
 * Operates over both TCP and UDP protocols</source>
         <translation>OpenVPN — один из самых популярных и надежных VPN-протоколов. Он использует шифрование SSL/TLS, совместим со множеством устройств и ОС, а благодаря открытому коду постоянно совершенствуется сообществом. Имеет хороший баланс скорости и безопасности, но легко распознаётся системами DPI, что делает его уязвимым к блокировкам.
 
 Особенности:
-* Доступен во всех приложениях Pow VPN
+* Доступен во всех приложениях PowVPN
 * Нормальное энергопотребление на мобильных устройствах
 * Гибкие настройки под разные устройства и ОС
 * Работает по TCP и UDP</translation>
@@ -6617,7 +6617,7 @@ Features:
         <source>WireGuard is a modern, streamlined VPN protocol offering stable connectivity and excellent performance across all devices. It uses fixed encryption settings, delivering lower latency and higher data transfer speeds compared to OpenVPN. However, WireGuard is easily identifiable by DPI systems due to its distinctive packet signatures, making it susceptible to blocking.
 
 Features:
-* Available on all Pow VPN platforms
+* Available on all PowVPN platforms
 * Low power consumption on mobile devices
 * Minimal configuration required
 * Easily detected by DPI systems (susceptible to blocking)
@@ -6627,7 +6627,7 @@ Features:
 Однако WireGuard легко распознаётся системами DPI из-за характерных сигнатур трафика, что делает его уязвимым к блокировкам.
 
 Особенности:
-* Доступен на всех платформах Pow VPN
+* Доступен на всех платформах PowVPN
 * Низкое энергопотребление на мобильных устройствах
 * Минимум настроек
 * Легко определяется DPI-системами (подвержен блокировкам)
@@ -6640,7 +6640,7 @@ Features:
 AmneziaWG is an excellent choice for those seeking a fast, stealthy VPN connection.
 
 Features:
-* Available on all Pow VPN platforms
+* Available on all PowVPN platforms
 * Low battery consumption on mobile devices
 * Minimal settings required
 * Undetectable by traffic analysis systems (DPI)
@@ -6650,7 +6650,7 @@ Features:
 Таким образом, AmneziaWG идеально подойдёт тем, кто ищет быстрое и незаметное VPN-соединение.
 
 Особенности:
-* Доступен во всех версиях Pow VPN
+* Доступен во всех версиях PowVPN
 * Низкое энергопотребление на мобильных устройствах
 * Минимум настроек
 * Незаметен для систем анализа трафика (DPI)
@@ -6685,7 +6685,7 @@ REALITY распознаёт системы блокировки во время
         <source>IKEv2, combined with IPSec encryption, is a modern and reliable VPN protocol. It reconnects quickly when switching networks or devices, making it ideal for dynamic network environments. While it provides good security and speed, it&apos;s easily recognized by DPI systems and susceptible to blocking.
 
 Features:
-* Available in Pow VPN only on Windows
+* Available in PowVPN only on Windows
 * Low battery consumption on mobile devices
 * Minimal configuration required
 * Detectable by DPI analysis systems(easily blocked)
@@ -6693,7 +6693,7 @@ Features:
         <translation>IKEv2 — современный и стабильный VPN-протокол, работающий совместно с шифрованием IPSec. Он обеспечивает быстрое переподключение при смене сети или устройства, отлично подходит для динамичных сетевых условий. Несмотря на хорошую скорость и безопасность, легко распознаётся системами DPI и подвержен блокировкам.
 
 Особенности:
-* Доступен в Pow VPN только на Windows
+* Доступен в PowVPN только на Windows
 * Низкое энергопотребление на мобильных устройствах
 * Минимум настроек
 * Распознаётся DPI-системами (легко блокируется)

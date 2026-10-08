@@ -83,7 +83,7 @@ DrawerType2 {
 
                 text: qsTr("amnezia.org")
                 descriptionText: qsTr("Download the update manually")
-                leftImageSource: "qrc:/images/controls/amnezia.svg"
+                leftImageSource: "qrc:/images/icon.png"
                 rightImageSource: "qrc:/images/controls/chevron-right.svg"
 
                 clickedFunction: function() {

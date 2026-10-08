@@ -27,12 +27,12 @@ PageType {
     property bool isSelfHostedConfig: true
 
     property string configExtension: ".vpn"
-    property string configCaption: qsTr("Save Pow VPN config")
+    property string configCaption: qsTr("Save PowVPN config")
     property string configFileName: "amnezia_config"
 
     // onVisibleChanged: {
     //     configExtension = ".vpn"
-    //     configCaption = qsTr("Save Pow VPN config")
+    //     configCaption = qsTr("Save PowVPN config")
     //     configFileName = "amnezia_config"
 
     //     if (visible) {

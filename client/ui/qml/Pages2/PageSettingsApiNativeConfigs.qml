@@ -20,7 +20,7 @@ PageType {
     id: root
 
     property string configExtension: ".conf"
-    property string configCaption: qsTr("Save Pow VPN config")
+    property string configCaption: qsTr("Save PowVPN config")
 
     BackButtonType {
         id: backButton
@@ -58,7 +58,7 @@ PageType {
                 Layout.leftMargin: 16
 
                 headerText: qsTr("Configuration Files")
-                descriptionText: qsTr("For router setup or the Pow VPN app")
+                descriptionText: qsTr("For router setup or the PowVPN app")
             }
         }
 

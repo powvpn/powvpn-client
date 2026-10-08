@@ -320,7 +320,7 @@ if(AMNEZIA_BUILD_TESTS)
 endif()
 
 
-# Pow VPN managed-service overlay
+# PowVPN managed-service overlay
 target_sources(${PROJECT} PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/core/managed/managedApiClient.h
     ${CMAKE_CURRENT_LIST_DIR}/core/managed/managedApiClient.cpp
@@ -331,7 +331,7 @@ target_sources(${PROJECT} PRIVATE
 )
 
 
-# Pow VPN browser-extension Native Messaging host
+# PowVPN browser-extension Native Messaging host
 include(${CMAKE_CURRENT_LIST_DIR}/CMakeLists.browserTunnel.cmake)
 install(TARGETS pow-native-host
     DESTINATION ${CMAKE_INSTALL_BINDIR}

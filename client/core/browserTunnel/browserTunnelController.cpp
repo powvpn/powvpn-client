@@ -9,7 +9,7 @@
 namespace {
 constexpr auto kIpcName = "PowVPN.BrowserTunnel.v1";
 QString secret() { return QString::number(QRandomGenerator::global()->generate64(), 16) + QString::number(QRandomGenerator::global()->generate64(), 16); }
-QByteArray authChallenge() { return "HTTP/1.1 407 Proxy Authentication Required\r\nProxy-Authenticate: Basic realm=\"Pow VPN\"\r\nConnection: close\r\n\r\n"; }
+QByteArray authChallenge() { return "HTTP/1.1 407 Proxy Authentication Required\r\nProxy-Authenticate: Basic realm=\"PowVPN\"\r\nConnection: close\r\n\r\n"; }
 QByteArray badGateway() { return "HTTP/1.1 502 Bad Gateway\r\nConnection: close\r\n\r\n"; }
 bool localDestination(const QString &host) {
     const QString h = host.trimmed().toLower();
@@ -21,7 +21,7 @@ BrowserTunnelController::BrowserTunnelController(ManagedConnectionAdapter *conne
     : QObject(parent), m_connection(connection)
 {
     m_pendingTimer.setSingleShot(true);
-    connect(&m_pendingTimer, &QTimer::timeout, this, [this] { failPendingStart(QStringLiteral("Pow VPN Client did not connect in time")); });
+    connect(&m_pendingTimer, &QTimer::timeout, this, [this] { failPendingStart(QStringLiteral("PowVPN Client did not connect in time")); });
     if (m_connection) {
         connect(m_connection, &ManagedConnectionAdapter::stateChanged, this, &BrowserTunnelController::onManagedStateChanged);
         connect(m_connection, &ManagedConnectionAdapter::connectionFailed, this, [this](const QString &error) { failPendingStart(error); });
@@ -64,8 +64,8 @@ void BrowserTunnelController::handleIpc(QLocalSocket *socket)
         return;
     }
     if (command != "start") { sendIpc(socket, {{"ok", false}, {"error", "Unsupported browser bridge command"}}); return; }
-    if (!m_connection) { sendIpc(socket, {{"ok", false}, {"error", "Pow VPN Client is unavailable"}}); return; }
-    if (m_pendingSocket) { sendIpc(socket, {{"ok", false}, {"error", "A Pow VPN Client connection is already being prepared"}}); return; }
+    if (!m_connection) { sendIpc(socket, {{"ok", false}, {"error", "PowVPN Client is unavailable"}}); return; }
+    if (m_pendingSocket) { sendIpc(socket, {{"ok", false}, {"error", "A PowVPN Client connection is already being prepared"}}); return; }
 
     QString country = request.value("country").toString().trimmed().toUpper();
     if (country == QStringLiteral("AUTO")) country.clear();

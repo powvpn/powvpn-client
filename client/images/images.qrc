@@ -3,15 +3,13 @@
         <file>../fonts/pt-root-ui_vf.ttf</file>
     </qresource>
     <qresource prefix="/images">
-        <file>amneziaBigLogo.png</file>
         <file>powvpnWelcomeDark.png</file>
-        <file>AmneziaVPN.png</file>
+        <file>icon.png</file>
         <file>controls/alert-circle.svg</file>
         <file>update/updateHeroDark.jpg</file>
         <file>update/plus-circle.svg</file>
         <file>update/arrow-up-circle.svg</file>
         <file>update/wrench.svg</file>
-        <file>controls/amnezia.svg</file>
         <file>controls/app.svg</file>
         <file>controls/archive-restore.svg</file>
         <file>controls/arrow-left.svg</file>
@@ -78,4 +76,3 @@
         <file>controls/monitor.svg</file>
     </qresource>
 </RCC>
-

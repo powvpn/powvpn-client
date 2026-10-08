@@ -1,6 +1,6 @@
-set(CPACK_PACKAGE_NAME              "Pow VPN")
-set(CPACK_PACKAGE_VENDOR            "Pow VPN")
-set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Pow VPN")
+set(CPACK_PACKAGE_NAME              "PowVPN")
+set(CPACK_PACKAGE_VENDOR            "PowVPN")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "PowVPN")
 set(CPACK_PACKAGE_VERSION           ${AMNEZIAVPN_VERSION})
 if(WIN32)
     set(CPACK_PACKAGE_FILE_NAME "PowVPN_${AMNEZIAVPN_VERSION}_windows_x64")
@@ -9,8 +9,8 @@ elseif(APPLE AND NOT IOS AND NOT MACOS_NE)
 elseif(LINUX AND NOT ANDROID)
     set(CPACK_PACKAGE_FILE_NAME "AmneziaVPN_${AMNEZIAVPN_VERSION}_linux_x64")
 endif()
-set(CPACK_PACKAGE_INSTALL_DIRECTORY "Pow VPN")
-set(CPACK_PACKAGE_EXECUTABLES       PowVPN "Pow VPN")
+set(CPACK_PACKAGE_INSTALL_DIRECTORY "PowVPN")
+set(CPACK_PACKAGE_EXECUTABLES       PowVPN "PowVPN")
 set(CPACK_PRE_BUILD_SCRIPTS         ${CMAKE_CURRENT_LIST_DIR}/sign_binaries.cmake)
 set(CPACK_POST_BUILD_SCRIPTS        ${CMAKE_CURRENT_LIST_DIR}/sign_packages.cmake)
 set(CPACK_PROJECT_CONFIG_FILE       ${CMAKE_CURRENT_LIST_DIR}/CPackOptions.cmake)
@@ -26,7 +26,7 @@ endif()
 
 # === CPack IFW generator settings ===
 set(CPACK_IFW_PACKAGE_NAME                          PowVPN)
-set(CPACK_IFW_PACKAGE_TITLE                         "Pow VPN")
+set(CPACK_IFW_PACKAGE_TITLE                         "PowVPN")
 set(CPACK_IFW_PACKAGE_WIZARD_DEFAULT_WIDTH          600)
 set(CPACK_IFW_PACKAGE_WIZARD_DEFAULT_HEIGHT         380)
 set(CPACK_IFW_PACKAGE_WIZARD_STYLE                  Modern)
@@ -58,8 +58,8 @@ list(APPEND CMAKE_MODULE_PATH           ${CMAKE_SOURCE_DIR}/deploy/data/macos)
 if(LINUX AND NOT ANDROID)
     install(FILES
         ${CMAKE_SOURCE_DIR}/deploy/data/linux/AmneziaVPN.service
-        ${CMAKE_SOURCE_DIR}/deploy/data/linux/AmneziaVPN.png
-        ${CMAKE_SOURCE_DIR}/deploy/data/linux/AmneziaVPN.desktop
+        ${CMAKE_SOURCE_DIR}/deploy/data/linux/PowVPN.png
+        ${CMAKE_SOURCE_DIR}/deploy/data/linux/PowVPN.desktop
         ${CMAKE_SOURCE_DIR}/deploy/data/linux/post_install.sh
         ${CMAKE_SOURCE_DIR}/deploy/data/linux/post_uninstall.sh
         DESTINATION "."
@@ -96,8 +96,8 @@ endif()
 
 include(CPackIFW)
 cpack_ifw_configure_component(AmneziaVPN
-    DISPLAY_NAME "Pow VPN"
-    DESCRIPTION "Pow VPN"
+    DISPLAY_NAME "PowVPN"
+    DESCRIPTION "PowVPN"
     VERSION ${AMNEZIAVPN_VERSION}
     RELEASE_DATE ${RELEASE_DATE}
     REQUIRES_ADMIN_RIGHTS
@@ -107,7 +107,7 @@ cpack_ifw_configure_component(AmneziaVPN
 
 include(CPack)
 cpack_add_component(Uninstall
-    DISPLAY_NAME "Uninstall Pow VPN"
+    DISPLAY_NAME "Uninstall PowVPN"
     REQUIRES_ADMIN_RIGHTS
     DISABLED
 )

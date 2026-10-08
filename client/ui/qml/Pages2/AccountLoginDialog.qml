@@ -8,7 +8,7 @@ import "../Controls2"
 
 Dialog {
     id: root
-    title: qsTr("Sign in to Pow VPN")
+    title: qsTr("Sign in to PowVPN")
     modal: true
     focus: true
     closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
@@ -29,7 +29,7 @@ Dialog {
 
         Label {
             Layout.fillWidth: true
-            text: qsTr("Use your Pow VPN account to sync locations and connect.")
+            text: qsTr("Use your PowVPN account to sync locations and connect.")
             wrapMode: Text.WordWrap
             opacity: 0.8
         }

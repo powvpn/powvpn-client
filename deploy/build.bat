@@ -100,7 +100,7 @@ if exist "%VCVARS_PATH%" (
 set "_tests_arg="
 if defined AMNEZIA_BUILD_TESTS set "_tests_arg=-DAMNEZIA_BUILD_TESTS=%AMNEZIA_BUILD_TESTS%"
 @echo on
-cmake -S "%PROJECT_DIR%" -B "%BUILD_DIR%" -DCMAKE_BUILD_TYPE=Release "-DCMAKE_PREFIX_PATH=%QT_ROOT_PATH%\msvc2022_%_qt_postfix_arg%" "-DCMAKE_VS_GLOBALS=UseMultiToolTask=true;EnforceProcessCountAcrossBuilds=true" -DCLIENT_TARGET_NAME=PowVPN -DCLIENT_APPLICATION_NAME="Pow VPN" -DCLIENT_SERVICE_NAME=PowVPN-service -DCLIENT_ORGANIZATION_NAME=PowVPN -DCLIENT_APP_INSTANCE_NAME=PowVPNInstance -DCLIENT_KEYCHAIN_NAME=PowVPN-Keychain %_tests_arg% || goto :fail
+cmake -S "%PROJECT_DIR%" -B "%BUILD_DIR%" -DCMAKE_BUILD_TYPE=Release "-DCMAKE_PREFIX_PATH=%QT_ROOT_PATH%\msvc2022_%_qt_postfix_arg%" "-DCMAKE_VS_GLOBALS=UseMultiToolTask=true;EnforceProcessCountAcrossBuilds=true" -DCLIENT_TARGET_NAME=PowVPN -DCLIENT_APPLICATION_NAME="PowVPN" -DCLIENT_SERVICE_NAME=PowVPN-service -DCLIENT_ORGANIZATION_NAME=PowVPN -DCLIENT_APP_INSTANCE_NAME=PowVPNInstance -DCLIENT_KEYCHAIN_NAME=PowVPN-Keychain %_tests_arg% || goto :fail
 cmake --build "%BUILD_DIR%" --config Release -- /m  || goto :fail
 if /i "%ARCH%" == "amd64" (
     set "_client_release_dir=%BUILD_DIR%\client\Release"

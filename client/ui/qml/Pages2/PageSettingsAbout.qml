@@ -18,7 +18,7 @@ PageType {
         target: UpdateController
 
         function onUpdateNotFound() {
-            PageController.showNotificationMessage(qsTr("You have the latest version of Pow VPN"))
+            PageController.showNotificationMessage(qsTr("You have the latest version of PowVPN"))
         }
 
         function onUpdateCheckFailed() {
@@ -70,7 +70,7 @@ PageType {
                 Layout.leftMargin: 16
                 Layout.rightMargin: 16
 
-                text: qsTr("About Pow VPN")
+                text: qsTr("About PowVPN")
                 horizontalAlignment: Text.AlignHCenter
             }
 
@@ -85,7 +85,7 @@ PageType {
                 height: 20
                 font.pixelSize: 14
 
-                text: qsTr("Pow VPN is a fast, reliable, and private VPN service.")
+                text: qsTr("PowVPN is a fast, reliable, and private VPN service.")
                 color: AmneziaStyle.color.paleGray
             }
 
@@ -237,7 +237,7 @@ PageType {
 
         readonly property string title: qsTr("Website")
         readonly property string description: qsTr("Visit official website")
-        readonly property string imageSource: "qrc:/images/controls/amnezia.svg"
+        readonly property string imageSource: "qrc:/images/icon.png"
         readonly property var handler: function() {
             Qt.openUrlExternally(LanguageUiController.getCurrentSiteUrl())
         }

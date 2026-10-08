@@ -71,7 +71,7 @@ ManagedServiceController::ManagedServiceController(QObject *parent) : QObject(pa
             return;
         }
         if (code == 401 && !registered()) {
-            setError(QStringLiteral("Sign in with your email and password to use Pow VPN"));
+            setError(QStringLiteral("Sign in with your email and password to use PowVPN"));
             return;
         }
         setError(QString("HTTP %1: %2").arg(code).arg(message));
@@ -117,7 +117,7 @@ bool ManagedServiceController::importAccountKey(const QString &key)
     const QString accountToken = query.queryItemValue(QStringLiteral("token"), QUrl::FullyDecoded).trimmed();
     const QString email = query.queryItemValue(QStringLiteral("email"), QUrl::FullyDecoded).trimmed().toLower();
     if (accountToken.isEmpty()) {
-        setError(QStringLiteral("Invalid Pow VPN account key"));
+        setError(QStringLiteral("Invalid PowVPN account key"));
         return true;
     }
 

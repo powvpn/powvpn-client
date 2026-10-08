@@ -1,6 +1,6 @@
 {
   "name": "com.powvpn.client",
-  "description": "Pow VPN browser tunnel bridge",
+  "description": "PowVPN browser tunnel bridge",
   "path": "__POW_NATIVE_HOST_PATH__",
   "type": "stdio",
   "allowed_extensions": ["__POW_FIREFOX_EXTENSION_ID__"]

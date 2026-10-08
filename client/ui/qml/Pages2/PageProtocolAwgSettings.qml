@@ -65,7 +65,7 @@ PageType {
                 Layout.leftMargin: 16
                 Layout.rightMargin: 16
 
-                headerText: qsTr("Pow VPN settings")
+                headerText: qsTr("PowVPN settings")
             }
 
             TextFieldWithHeaderType {

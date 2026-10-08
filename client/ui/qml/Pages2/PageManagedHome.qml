@@ -89,7 +89,7 @@ Page {
         }
         Label {
             visible: ManagedConnectionAdapter.stateText === "error"
-            text: qsTr("Could not connect. Pick a country to retry, or Pow VPN will try a backup server automatically.")
+            text: qsTr("Could not connect. Pick a country to retry, or PowVPN will try a backup server automatically.")
             color: "#d34a4a"
             wrapMode: Text.WordWrap
             Layout.fillWidth: true

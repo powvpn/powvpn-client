@@ -429,8 +429,8 @@ Already installed containers were found on the server. All installed containers 
     <message>
         <location filename="../ui/utils/notificationHandler.cpp" line="57"/>
         <location filename="../ui/utils/notificationHandler.cpp" line="64"/>
-        <source>Pow VPN</source>
-        <translation>Pow VPN</translation>
+        <source>PowVPN</source>
+        <translation>PowVPN</translation>
     </message>
     <message>
         <location filename="../ui/utils/notificationHandler.cpp" line="58"/>
@@ -444,8 +444,8 @@ Already installed containers were found on the server. All installed containers 
     </message>
     <message>
         <location filename="../ui/utils/notificationHandler.cpp" line="88"/>
-        <source>Pow VPN notification</source>
-        <translation>Pow VPN 提示</translation>
+        <source>PowVPN notification</source>
+        <translation>PowVPN 提示</translation>
     </message>
     <message>
         <location filename="../ui/utils/notificationHandler.cpp" line="89"/>
@@ -3367,7 +3367,7 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettings.qml" line="177"/>
-        <source>About Pow VPN</source>
+        <source>About PowVPN</source>
         <translation>关于</translation>
     </message>
     <message>
@@ -3380,8 +3380,8 @@ Create one from the current settings.</source>
     <name>PageSettingsAbout</name>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="21"/>
-        <source>You have the latest version of Pow VPN</source>
-        <translation>您已使用最新版本的 Pow VPN</translation>
+        <source>You have the latest version of PowVPN</source>
+        <translation>您已使用最新版本的 PowVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="25"/>
@@ -3657,7 +3657,7 @@ Create one from the current settings.</source>
     <name>PageSettingsApiNativeConfigs</name>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiNativeConfigs.qml" line="23"/>
-        <source>Save Pow VPN config</source>
+        <source>Save PowVPN config</source>
         <translation>保存配置</translation>
     </message>
     <message>
@@ -3893,7 +3893,7 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiSubscriptionKey.qml" line="121"/>
-        <source>Save Pow VPN config</source>
+        <source>Save PowVPN config</source>
         <translation>保存配置</translation>
     </message>
     <message>
@@ -4127,8 +4127,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApplication.qml" line="264"/>
-        <source>All settings will be reset to default. All installed Pow VPN services will still remain on the server.</source>
-        <translation>所有配置恢复为默认值。服务器已安装的Pow VPN服务将被保留。</translation>
+        <source>All settings will be reset to default. All installed PowVPN services will still remain on the server.</source>
+        <translation>所有配置恢复为默认值。服务器已安装的PowVPN服务将被保留。</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApplication.qml" line="265"/>
@@ -4165,8 +4165,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsBackup.qml" line="88"/>
-        <source>The backup will contain your passwords and private keys for all servers added to Pow VPN. Keep this information in a secure place.</source>
-        <translation>备份将包含您添加到 Pow VPN 的所有服务器的密码和私钥。请将这些信息保存在安全的地方。</translation>
+        <source>The backup will contain your passwords and private keys for all servers added to PowVPN. Keep this information in a secure place.</source>
+        <translation>备份将包含您添加到 PowVPN 的所有服务器的密码和私钥。请将这些信息保存在安全的地方。</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsBackup.qml" line="102"/>
@@ -4559,8 +4559,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsLogging.qml" line="182"/>
-        <source>Pow VPN logs</source>
-        <translation>Pow VPN 日志</translation>
+        <source>PowVPN logs</source>
+        <translation>PowVPN 日志</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsLogging.qml" line="192"/>
@@ -4587,8 +4587,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsLogging.qml" line="211"/>
-        <source>Pow VPN-service logs</source>
-        <translation>Pow VPN 服务日志</translation>
+        <source>PowVPN-service logs</source>
+        <translation>PowVPN 服务日志</translation>
     </message>
 </context>
 <context>
@@ -4669,8 +4669,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsServerData.qml" line="147"/>
-        <source>All installed Pow VPN services will still remain on the server.</source>
-        <translation>所有已安装的 Pow VPN 服务仍将保留在服务器上。</translation>
+        <source>All installed PowVPN services will still remain on the server.</source>
+        <translation>所有已安装的 PowVPN 服务仍将保留在服务器上。</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsServerData.qml" line="153"/>
@@ -5201,8 +5201,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSetupWizardConfigSource.qml" line="304"/>
-        <source>Configure Pow VPN on your own server</source>
-        <translation>在您自己的服务器上配置 Pow VPN</translation>
+        <source>Configure PowVPN on your own server</source>
+        <translation>在您自己的服务器上配置 PowVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSetupWizardConfigSource.qml" line="316"/>
@@ -5575,7 +5575,7 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="51"/>
-        <source>Save Pow VPN config</source>
+        <source>Save PowVPN config</source>
         <translation>保存配置</translation>
     </message>
     <message>
@@ -5610,8 +5610,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="108"/>
-        <source>For the Pow VPN app</source>
-        <translation>Pow VPN 应用</translation>
+        <source>For the PowVPN app</source>
+        <translation>PowVPN 应用</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="113"/>
@@ -5778,7 +5778,7 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShareConnection.qml" line="30"/>
-        <source>Save Pow VPN config</source>
+        <source>Save PowVPN config</source>
         <translation>保存配置</translation>
     </message>
     <message>
@@ -6541,14 +6541,14 @@ Create one from the current settings.</source>
         <source>OpenVPN is one of the most popular and reliable VPN protocols. It uses SSL/TLS encryption, supports a wide variety of devices and operating systems, and is continuously improved by the community due to its open-source nature. It provides a good balance between speed and security but is easily recognized by DPI systems, making it susceptible to blocking.
 
 Features:
-* Available on all Pow VPN platforms
+* Available on all PowVPN platforms
 * Normal battery consumption on mobile devices
 * Flexible customization for various devices and OS
 * Operates over both TCP and UDP protocols</source>
         <translation>OpenVPN 是最流行、最可靠的 VPN 协议之一。它采用 SSL/TLS 加密，支持种类繁多的设备和操作系统，并且由于其开源特性而不断得到社区的改进。它在速度与安全之间取得了良好的平衡，但很容易被 DPI 系统识别，因而容易被封锁。
 
 特性：
-* 在所有 Pow VPN 平台上均可使用
+* 在所有 PowVPN 平台上均可使用
 * 移动设备上电量消耗一般
 * 可针对各种设备和操作系统灵活定制
 * 同时支持 TCP 和 UDP 协议</translation>
@@ -6558,7 +6558,7 @@ Features:
         <source>WireGuard is a modern, streamlined VPN protocol offering stable connectivity and excellent performance across all devices. It uses fixed encryption settings, delivering lower latency and higher data transfer speeds compared to OpenVPN. However, WireGuard is easily identifiable by DPI systems due to its distinctive packet signatures, making it susceptible to blocking.
 
 Features:
-* Available on all Pow VPN platforms
+* Available on all PowVPN platforms
 * Low power consumption on mobile devices
 * Minimal configuration required
 * Easily detected by DPI systems (susceptible to blocking)
@@ -6566,7 +6566,7 @@ Features:
         <translation>WireGuard 是一款现代、精简的 VPN 协议，可在所有设备上提供稳定的连接和出色的性能。它采用固定的加密设置，相比 OpenVPN 延迟更低、数据传输速度更高。不过，由于数据包特征明显，WireGuard 很容易被 DPI 系统识别，因而容易被封锁。
 
 特性：
-* 在所有 Pow VPN 平台上均可使用
+* 在所有 PowVPN 平台上均可使用
 * 移动设备上功耗低
 * 只需极少配置
 * 容易被 DPI 系统检测（容易被封锁）
@@ -6579,7 +6579,7 @@ Features:
 AmneziaWG is an excellent choice for those seeking a fast, stealthy VPN connection.
 
 Features:
-* Available on all Pow VPN platforms
+* Available on all PowVPN platforms
 * Low battery consumption on mobile devices
 * Minimal settings required
 * Undetectable by traffic analysis systems (DPI)
@@ -6589,7 +6589,7 @@ Features:
 对于追求快速、隐蔽的 VPN 连接的用户，AmneziaWG 是极佳的选择。
 
 特性：
-* 在所有 Pow VPN 平台上均可使用
+* 在所有 PowVPN 平台上均可使用
 * 移动设备上电量消耗低
 * 只需极少设置
 * 无法被流量分析系统（DPI）检测
@@ -6621,7 +6621,7 @@ Features:
         <source>IKEv2, combined with IPSec encryption, is a modern and reliable VPN protocol. It reconnects quickly when switching networks or devices, making it ideal for dynamic network environments. While it provides good security and speed, it&apos;s easily recognized by DPI systems and susceptible to blocking.
 
 Features:
-* Available in Pow VPN only on Windows
+* Available in PowVPN only on Windows
 * Low battery consumption on mobile devices
 * Minimal configuration required
 * Detectable by DPI analysis systems(easily blocked)
@@ -6629,7 +6629,7 @@ Features:
         <translation>IKEv2 结合 IPSec 加密，是一种现代且可靠的 VPN 协议。在切换网络或设备时它能快速重新连接，因此非常适合网络环境多变的场景。虽然它提供了良好的安全性和速度，但很容易被 DPI 系统识别，也容易被封锁。
 
 特性：
-* 在 Pow VPN 中仅 Windows 平台可用
+* 在 PowVPN 中仅 Windows 平台可用
 * 移动设备上电量消耗低
 * 只需极少配置
 * 可被 DPI 分析系统检测（容易被封锁）

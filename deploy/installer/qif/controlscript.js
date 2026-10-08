@@ -21,8 +21,18 @@ function appExecutableFileName()
 function appInstalled()
 {
     if (runningOnWindows()) {
-        appInstalledUninstallerPath = installer.value("RootDir") + "Program Files/AmneziaVPN/maintenancetool.exe";
-        appInstalledUninstallerPath_x86 = installer.value("RootDir") + "Program Files (x86)/AmneziaVPN/maintenancetool.exe";
+        appInstalledUninstallerPath = installer.value("RootDir") + "Program Files/PowVPN/maintenancetool.exe";
+        appInstalledUninstallerPath_x86 = installer.value("RootDir") + "Program Files (x86)/PowVPN/maintenancetool.exe";
+        // Keep upgrades working for builds released before the install directory
+        // was renamed from "Pow VPN" to "PowVPN", as well as the original fork.
+        if (!installer.fileExists(appInstalledUninstallerPath) && !installer.fileExists(appInstalledUninstallerPath_x86)) {
+            appInstalledUninstallerPath = installer.value("RootDir") + "Program Files/Pow VPN/maintenancetool.exe";
+            appInstalledUninstallerPath_x86 = installer.value("RootDir") + "Program Files (x86)/Pow VPN/maintenancetool.exe";
+        }
+        if (!installer.fileExists(appInstalledUninstallerPath) && !installer.fileExists(appInstalledUninstallerPath_x86)) {
+            appInstalledUninstallerPath = installer.value("RootDir") + "Program Files/AmneziaVPN/maintenancetool.exe";
+            appInstalledUninstallerPath_x86 = installer.value("RootDir") + "Program Files (x86)/AmneziaVPN/maintenancetool.exe";
+        }
     } else if (runningOnMacOS()){
         appInstalledUninstallerPath = "/Applications/" + appName() + ".app/maintenancetool.app/Contents/MacOS/maintenancetool";
     } else if (runningOnLinux()){
@@ -30,6 +40,15 @@ function appInstalled()
     }
 
     return installer.fileExists(appInstalledUninstallerPath) || installer.fileExists(appInstalledUninstallerPath_x86);
+}
+
+function stopStaleAppWorker()
+{
+    if (runningOnWindows()) {
+        // A crashed or detached updater worker can keep its executable locked
+        // after the UI has closed. It is safe to end before an install/update.
+        installer.execute("taskkill", ["/F", "/T", "/IM", appName() + "-worker.exe"]);
+    }
 }
 
 function endsWith(str, suffix)
@@ -232,6 +251,7 @@ function Controller () {
     }
 
     if (runningOnWindows()) {
+        stopStaleAppWorker();
         installer.setValue("AllUsers", "true");
     }
 

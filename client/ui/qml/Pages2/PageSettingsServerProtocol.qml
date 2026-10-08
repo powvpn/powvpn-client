@@ -68,7 +68,7 @@ PageType {
                 iconPath: "qrc:/images/controls/alert-circle.svg"
                 imageColor: AmneziaStyle.color.goldenApricot
                 textColor: AmneziaStyle.color.goldenApricot
-                textString: qsTr("Pow VPN 2.0 is outdated and does not include the latest security improvements, but it will continue to work. Moving to Pow VPN 3.1 by deploying a new container on the server is recommended for stronger protocol security")
+                textString: qsTr("PowVPN 2.0 is outdated and does not include the latest security improvements, but it will continue to work. Moving to PowVPN 3.1 by deploying a new container on the server is recommended for stronger protocol security")
             }
         }
 

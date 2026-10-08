@@ -1,4 +1,4 @@
-# Pow VPN Browser Tunnel native messaging host.
+# PowVPN Browser Tunnel native messaging host.
 # Include from the branded client CMakeLists after Qt6 is found.
 add_executable(pow-native-host
     ${CMAKE_CURRENT_LIST_DIR}/core/browserTunnel/browserTunnelNativeHost.cpp

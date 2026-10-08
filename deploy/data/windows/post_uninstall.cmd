@@ -16,6 +16,7 @@ sc stop AmneziaWGTunnel$AmneziaVPN
 sc delete AmneziaWGTunnel$AmneziaVPN
 taskkill /IM "PowVPN-service.exe" /F
 taskkill /IM "PowVPN.exe" /F
+taskkill /IM "PowVPN-worker.exe" /F
 
 rem Delete the service log file under ProgramData
 if exist "%SYS_LOG_FILE%" del /F /Q "%SYS_LOG_FILE%"

@@ -107,11 +107,11 @@ PageType {
                             clickedFunction: function() {
                                 var fileName = ""
                                 if (GC.isMobile()) {
-                                    fileName = "Pow VPN.log"
+                                    fileName = "PowVPN.log"
                                 } else {
                                     fileName = SystemController.getFileName(qsTr("Save"),
                                                                             qsTr("Logs files (*.log)"),
-                                                                            StandardPaths.standardLocations(StandardPaths.DocumentsLocation) + "/Pow VPN",
+                                                                            StandardPaths.standardLocations(StandardPaths.DocumentsLocation) + "/PowVPN",
                                                                             true,
                                                                             ".log")
                                 }
@@ -260,7 +260,7 @@ PageType {
                 disabledColor: AmneziaStyle.color.mutedGray
                 textColor: AmneziaStyle.color.goldenApricot
 
-                text: qsTr("Pow VPN")
+                text: qsTr("PowVPN")
 
                 rightImageSource: "qrc:/images/controls/external-link.svg"
 

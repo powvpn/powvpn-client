@@ -179,7 +179,7 @@ PageType {
         id: clientLogs
 
         readonly property string title: qsTr("Client logs")
-        readonly property string description: qsTr("Pow VPN logs")
+        readonly property string description: qsTr("PowVPN logs")
         readonly property bool isVisible: true
         readonly property var openLogsHandler: function() {
             SettingsController.openLogsFolder()
@@ -187,11 +187,11 @@ PageType {
         readonly property var exportLogsHandler: function() {
             var fileName = ""
             if (GC.isMobile()) {
-                fileName = "Pow VPN.log"
+                fileName = "PowVPN.log"
             } else {
                 fileName = SystemController.getFileName(qsTr("Save"),
                                                         qsTr("Logs files (*.log)"),
-                                                        StandardPaths.standardLocations(StandardPaths.DocumentsLocation) + "/Pow VPN",
+                                                        StandardPaths.standardLocations(StandardPaths.DocumentsLocation) + "/PowVPN",
                                                         true,
                                                         ".log")
             }
@@ -208,7 +208,7 @@ PageType {
         id: serviceLogs
 
         readonly property string title: qsTr("Service logs")
-        readonly property string description: qsTr("Pow VPN-service logs")
+        readonly property string description: qsTr("PowVPN-service logs")
         readonly property bool isVisible: !GC.isMobile() && !IsMacOsNeBuild
         readonly property var openLogsHandler: function() {
             SettingsController.openServiceLogsFolder()
@@ -217,7 +217,7 @@ PageType {
             var fileName = ""
             fileName = SystemController.getFileName(qsTr("Save"),
                                                     qsTr("Logs files (*.log)"),
-                                                    StandardPaths.standardLocations(StandardPaths.DocumentsLocation) + "/Pow VPN-service",
+                                                    StandardPaths.standardLocations(StandardPaths.DocumentsLocation) + "/PowVPN-service",
                                                     true,
                                                     ".log")
             if (fileName !== "") {

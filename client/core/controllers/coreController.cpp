@@ -175,7 +175,7 @@ void CoreController::initCoreControllers()
     m_importCoreController = new ImportController(m_serversRepository, m_appSettingsRepository, this);
     m_connectionController = new ConnectionController(m_serversRepository, m_appSettingsRepository, m_vpnConnection.get(), this);
 
-    // Pow VPN managed-service integration: bridges /api/v1/client/allocate
+    // PowVPN managed-service integration: bridges /api/v1/client/allocate
     // to the pipeline above (see client-overlay/INTEGRATION.md).
     m_managedServiceController = new ManagedServiceController(this);
     m_managedServiceController->setApiBaseUrl(QUrl(QStringLiteral("https://powvpn.com")));

@@ -29,7 +29,7 @@
 
     <application
         android:name=".AmneziaApplication"
-        android:label="Pow VPN"
+        android:label="PowVPN"
         android:icon="@mipmap/icon"
         android:roundIcon="@mipmap/icon_round"
         android:banner="@mipmap/ic_banner"

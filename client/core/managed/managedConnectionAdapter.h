@@ -16,7 +16,7 @@ class ConnectionController;
 class SecureServersRepository;
 class ManagedServiceController;
 
-// Bridges Pow VPN's /api/v1/client/allocate response to upstream Amnezia's
+// Bridges PowVPN's /api/v1/client/allocate response to upstream Amnezia's
 // native connection pipeline (ImportController -> SecureServersRepository ->
 // ConnectionController), and drives client-side failover per
 // client-overlay/FAILOVER.md.
@@ -67,7 +67,7 @@ private:
     struct Candidate
     {
         QString localServerId;   // id in Amnezia's own SecureServersRepository
-        int backendServerId = 0; // Pow VPN control-plane VpnServer.id (for telemetry)
+        int backendServerId = 0; // PowVPN control-plane VpnServer.id (for telemetry)
         int priority = 0;       // backend connection priority, independent of UI order
         QString protocol;        // "amneziawg" | "vless"
         QString countryCode;

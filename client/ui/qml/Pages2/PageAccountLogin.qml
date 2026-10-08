@@ -55,7 +55,7 @@ PageType {
 
         ParagraphTextType {
             Layout.fillWidth: true
-            text: qsTr("Sign in to sync all available Pow VPN locations with this device.")
+            text: qsTr("Sign in to sync all available PowVPN locations with this device.")
             color: AmneziaStyle.color.mutedGray
             wrapMode: Text.WordWrap
         }

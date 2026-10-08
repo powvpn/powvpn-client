@@ -16,7 +16,7 @@ set(CMAKE_PROJECT_TOP_LEVEL_INCLUDES
     CACHE STRING "" FORCE)
 
 project(${PROJECT} VERSION ${AMNEZIAVPN_VERSION}
-        DESCRIPTION "Pow VPN"
+        DESCRIPTION "PowVPN"
         HOMEPAGE_URL "https://powvpn.com/"
 )
 

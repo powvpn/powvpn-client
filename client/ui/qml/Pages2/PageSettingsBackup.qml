@@ -86,7 +86,7 @@ PageType {
                 Layout.rightMargin: 16
 
                 textString: qsTr("The backup will contain your passwords and private keys for all servers added " +
-                                 "to Pow VPN. Keep this information in a secure place.")
+                                 "to PowVPN. Keep this information in a secure place.")
 
                 iconPath: "qrc:/images/controls/alert-circle.svg"
             }
@@ -104,11 +104,11 @@ PageType {
                 clickedFunc: function() {
                     var fileName = ""
                     if (GC.isMobile()) {
-                        fileName = "Pow VPN.backup"
+                        fileName = "PowVPN.backup"
                     } else {
                         fileName = SystemController.getFileName(qsTr("Save backup file"),
                                                                 qsTr("Backup files (*.backup)"),
-                                                                StandardPaths.standardLocations(StandardPaths.DocumentsLocation) + "/Pow VPN",
+                                                                StandardPaths.standardLocations(StandardPaths.DocumentsLocation) + "/PowVPN",
                                                                 true,
                                                                 ".backup")
                     }

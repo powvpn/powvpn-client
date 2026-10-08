@@ -51,7 +51,7 @@ foreach ($item in $selected) {
     if (-not $Unregister) {
         $manifest = [ordered]@{
             name = $hostName
-            description = 'Pow VPN browser tunnel bridge'
+            description = 'PowVPN browser tunnel bridge'
             path = $hostExe
             type = 'stdio'
         }

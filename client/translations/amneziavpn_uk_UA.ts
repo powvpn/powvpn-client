@@ -429,8 +429,8 @@ Already installed containers were found on the server. All installed containers 
     <message>
         <location filename="../ui/utils/notificationHandler.cpp" line="57"/>
         <location filename="../ui/utils/notificationHandler.cpp" line="64"/>
-        <source>Pow VPN</source>
-        <translation>Pow VPN</translation>
+        <source>PowVPN</source>
+        <translation>PowVPN</translation>
     </message>
     <message>
         <location filename="../ui/utils/notificationHandler.cpp" line="58"/>
@@ -444,8 +444,8 @@ Already installed containers were found on the server. All installed containers 
     </message>
     <message>
         <location filename="../ui/utils/notificationHandler.cpp" line="88"/>
-        <source>Pow VPN notification</source>
-        <translation>Сповіщення Pow VPN</translation>
+        <source>PowVPN notification</source>
+        <translation>Сповіщення PowVPN</translation>
     </message>
     <message>
         <location filename="../ui/utils/notificationHandler.cpp" line="89"/>
@@ -3367,8 +3367,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettings.qml" line="177"/>
-        <source>About Pow VPN</source>
-        <translation>Про Pow VPN</translation>
+        <source>About PowVPN</source>
+        <translation>Про PowVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettings.qml" line="188"/>
@@ -3380,8 +3380,8 @@ Create one from the current settings.</source>
     <name>PageSettingsAbout</name>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="21"/>
-        <source>You have the latest version of Pow VPN</source>
-        <translation>У вас встановлено останню версію Pow VPN</translation>
+        <source>You have the latest version of PowVPN</source>
+        <translation>У вас встановлено останню версію PowVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="25"/>
@@ -3657,8 +3657,8 @@ Create one from the current settings.</source>
     <name>PageSettingsApiNativeConfigs</name>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiNativeConfigs.qml" line="23"/>
-        <source>Save Pow VPN config</source>
-        <translation>Зберегти config Pow VPN</translation>
+        <source>Save PowVPN config</source>
+        <translation>Зберегти config PowVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiNativeConfigs.qml" line="60"/>
@@ -3893,8 +3893,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiSubscriptionKey.qml" line="121"/>
-        <source>Save Pow VPN config</source>
-        <translation>Зберегти config Pow VPN</translation>
+        <source>Save PowVPN config</source>
+        <translation>Зберегти config PowVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiSubscriptionKey.qml" line="122"/>
@@ -4127,8 +4127,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApplication.qml" line="264"/>
-        <source>All settings will be reset to default. All installed Pow VPN services will still remain on the server.</source>
-        <translation>Всі дані із застосунку будуть видалені, всі встановлені сервіси Pow VPN залишаться на сервері.</translation>
+        <source>All settings will be reset to default. All installed PowVPN services will still remain on the server.</source>
+        <translation>Всі дані із застосунку будуть видалені, всі встановлені сервіси PowVPN залишаться на сервері.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApplication.qml" line="265"/>
@@ -4165,8 +4165,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsBackup.qml" line="88"/>
-        <source>The backup will contain your passwords and private keys for all servers added to Pow VPN. Keep this information in a secure place.</source>
-        <translation>Резервна копія міститиме ваші паролі та приватні ключі для всіх серверів, доданих до Pow VPN. Зберігайте цю інформацію у безпечному місці.</translation>
+        <source>The backup will contain your passwords and private keys for all servers added to PowVPN. Keep this information in a secure place.</source>
+        <translation>Резервна копія міститиме ваші паролі та приватні ключі для всіх серверів, доданих до PowVPN. Зберігайте цю інформацію у безпечному місці.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsBackup.qml" line="102"/>
@@ -4559,8 +4559,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsLogging.qml" line="182"/>
-        <source>Pow VPN logs</source>
-        <translation>Логи Pow VPN</translation>
+        <source>PowVPN logs</source>
+        <translation>Логи PowVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsLogging.qml" line="192"/>
@@ -4587,8 +4587,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsLogging.qml" line="211"/>
-        <source>Pow VPN-service logs</source>
-        <translation>Логи служби Pow VPN</translation>
+        <source>PowVPN-service logs</source>
+        <translation>Логи служби PowVPN</translation>
     </message>
 </context>
 <context>
@@ -4669,7 +4669,7 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsServerData.qml" line="147"/>
-        <source>All installed Pow VPN services will still remain on the server.</source>
+        <source>All installed PowVPN services will still remain on the server.</source>
         <translation>Всі встановлені сервіси та протоколи Amnezia все ще залишаться на сервері.</translation>
     </message>
     <message>
@@ -5207,8 +5207,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSetupWizardConfigSource.qml" line="304"/>
-        <source>Configure Pow VPN on your own server</source>
-        <translation>Налаштуйте Pow VPN на власному сервері</translation>
+        <source>Configure PowVPN on your own server</source>
+        <translation>Налаштуйте PowVPN на власному сервері</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSetupWizardConfigSource.qml" line="316"/>
@@ -5581,8 +5581,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="51"/>
-        <source>Save Pow VPN config</source>
-        <translation>Зберегти config Pow VPN</translation>
+        <source>Save PowVPN config</source>
+        <translation>Зберегти config PowVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="58"/>
@@ -5616,8 +5616,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="108"/>
-        <source>For the Pow VPN app</source>
-        <translation>Для Pow VPN</translation>
+        <source>For the PowVPN app</source>
+        <translation>Для PowVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="113"/>
@@ -5784,8 +5784,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShareConnection.qml" line="30"/>
-        <source>Save Pow VPN config</source>
-        <translation>Зберегти config Pow VPN</translation>
+        <source>Save PowVPN config</source>
+        <translation>Зберегти config PowVPN</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShareConnection.qml" line="150"/>
@@ -6488,14 +6488,14 @@ Create one from the current settings.</source>
         <source>OpenVPN is one of the most popular and reliable VPN protocols. It uses SSL/TLS encryption, supports a wide variety of devices and operating systems, and is continuously improved by the community due to its open-source nature. It provides a good balance between speed and security but is easily recognized by DPI systems, making it susceptible to blocking.
 
 Features:
-* Available on all Pow VPN platforms
+* Available on all PowVPN platforms
 * Normal battery consumption on mobile devices
 * Flexible customization for various devices and OS
 * Operates over both TCP and UDP protocols</source>
         <translation>OpenVPN — один із найпопулярніших і найнадійніших VPN-протоколів. Він використовує шифрування SSL/TLS, підтримує широкий спектр пристроїв та операційних систем і завдяки відкритому коду постійно вдосконалюється спільнотою. Він забезпечує добрий баланс між швидкістю та безпекою, але легко розпізнається системами DPI, що робить його уразливим до блокувань.
 
 Особливості:
-* Доступний на всіх платформах Pow VPN
+* Доступний на всіх платформах PowVPN
 * Звичайне споживання заряду батареї на мобільних пристроях
 * Гнучке налаштування під різні пристрої та ОС
 * Працює за протоколами TCP і UDP</translation>
@@ -6505,7 +6505,7 @@ Features:
         <source>WireGuard is a modern, streamlined VPN protocol offering stable connectivity and excellent performance across all devices. It uses fixed encryption settings, delivering lower latency and higher data transfer speeds compared to OpenVPN. However, WireGuard is easily identifiable by DPI systems due to its distinctive packet signatures, making it susceptible to blocking.
 
 Features:
-* Available on all Pow VPN platforms
+* Available on all PowVPN platforms
 * Low power consumption on mobile devices
 * Minimal configuration required
 * Easily detected by DPI systems (susceptible to blocking)
@@ -6513,7 +6513,7 @@ Features:
         <translation>WireGuard — сучасний і лаконічний VPN-протокол, який забезпечує стабільне з&apos;єднання та відмінну продуктивність на всіх пристроях. Він використовує фіксовані налаштування шифрування, що дає меншу затримку та вищу швидкість передачі даних порівняно з OpenVPN. Однак WireGuard легко розпізнається системами DPI через характерні сигнатури пакетів, що робить його уразливим до блокувань.
 
 Особливості:
-* Доступний на всіх платформах Pow VPN
+* Доступний на всіх платформах PowVPN
 * Низьке енергоспоживання на мобільних пристроях
 * Потребує мінімум налаштувань
 * Легко виявляється системами DPI (уразливий до блокувань)
@@ -6526,7 +6526,7 @@ Features:
 AmneziaWG is an excellent choice for those seeking a fast, stealthy VPN connection.
 
 Features:
-* Available on all Pow VPN platforms
+* Available on all PowVPN platforms
 * Low battery consumption on mobile devices
 * Minimal settings required
 * Undetectable by traffic analysis systems (DPI)
@@ -6536,7 +6536,7 @@ Features:
 AmneziaWG — відмінний вибір для тих, хто шукає швидке та непомітне VPN-з&apos;єднання.
 
 Особливості:
-* Доступний на всіх платформах Pow VPN
+* Доступний на всіх платформах PowVPN
 * Низьке споживання заряду батареї на мобільних пристроях
 * Потребує мінімум налаштувань
 * Непомітний для систем аналізу трафіку (DPI)
@@ -6568,7 +6568,7 @@ Features:
         <source>IKEv2, combined with IPSec encryption, is a modern and reliable VPN protocol. It reconnects quickly when switching networks or devices, making it ideal for dynamic network environments. While it provides good security and speed, it&apos;s easily recognized by DPI systems and susceptible to blocking.
 
 Features:
-* Available in Pow VPN only on Windows
+* Available in PowVPN only on Windows
 * Low battery consumption on mobile devices
 * Minimal configuration required
 * Detectable by DPI analysis systems(easily blocked)
@@ -6576,7 +6576,7 @@ Features:
         <translation>IKEv2 у поєднанні з шифруванням IPSec — сучасний і надійний VPN-протокол. Він швидко відновлює з&apos;єднання під час перемикання мереж або пристроїв, що робить його ідеальним для динамічних мережевих умов. Хоча він забезпечує добру безпеку та швидкість, його легко розпізнають системи DPI, і він уразливий до блокувань.
 
 Особливості:
-* Доступний в Pow VPN лише на Windows
+* Доступний в PowVPN лише на Windows
 * Низьке споживання заряду батареї на мобільних пристроях
 * Потребує мінімум налаштувань
 * Виявляється системами аналізу DPI (легко блокується)

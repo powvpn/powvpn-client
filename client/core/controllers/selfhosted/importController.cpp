@@ -533,7 +533,7 @@ QJsonObject ImportController::extractWireGuardConfig(const QString &data, Config
     auto configByLines = data.split("\n");
     for (const QString &line : configByLines) {
         QString trimmedLine = line.trimmed();
-        static const QString totalProNamePrefix = QStringLiteral("# Pow VPN: ");
+        static const QString totalProNamePrefix = QStringLiteral("# PowVPN: ");
         if (trimmedLine.startsWith(totalProNamePrefix)) {
             displayName = trimmedLine.mid(totalProNamePrefix.size()).trimmed();
         } else if (trimmedLine.startsWith("[") && trimmedLine.endsWith("]")) {

@@ -74,7 +74,7 @@ QString getProtocolName(DockerContainer defaultContainer, const QMap<DockerConta
                     protocolVersion = QStringLiteral(" 3.1");
                 }
                 if (defaultContainer == DockerContainer::Awg && !awg->serverConfig.isThirdPartyConfig) {
-                    containerName = QStringLiteral("Pow VPN Legacy");
+                    containerName = QStringLiteral("PowVPN Legacy");
                 }
             }
         }

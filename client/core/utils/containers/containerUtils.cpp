@@ -67,14 +67,14 @@ QMap<DockerContainer, QString> ContainerUtils::containerHumanNames()
              { DockerContainer::ShadowSocks, "OpenVPN over SS" },
              { DockerContainer::Cloak, "OpenVPN over Cloak" },
              { DockerContainer::WireGuard, "WireGuard" },
-             { DockerContainer::Awg, "Pow VPN" },
-             { DockerContainer::Awg2, "Pow VPN" },
+             { DockerContainer::Awg, "PowVPN" },
+             { DockerContainer::Awg2, "PowVPN" },
              { DockerContainer::Xray, "XRay" },
              { DockerContainer::Ipsec, QObject::tr("IPsec") },
              { DockerContainer::SSXray, "Shadowsocks"},
 
              { DockerContainer::TorWebSite, QObject::tr("Website in Tor network") },
-             { DockerContainer::Dns, QObject::tr("Pow VPN DNS") },
+             { DockerContainer::Dns, QObject::tr("PowVPN DNS") },
              { DockerContainer::Sftp, QObject::tr("SFTP file sharing service") },
              { DockerContainer::Socks5Proxy, QObject::tr("SOCKS5 proxy server") },
              { DockerContainer::MtProxy, QObject::tr("MTProxy (Telegram)") },
@@ -96,10 +96,10 @@ QMap<DockerContainer, QString> ContainerUtils::containerDescriptions()
                QObject::tr("WireGuard - popular VPN protocol with high performance, high speed and low power "
                            "consumption.") },
              { DockerContainer::Awg,
-               QObject::tr("Pow VPN uses an advanced protocol based on WireGuard. "
+               QObject::tr("PowVPN uses an advanced protocol based on WireGuard. "
                            "It provides high connection speed and ensures stable operation even in the most challenging network conditions.") },
              { DockerContainer::Awg2,
-               QObject::tr("Pow VPN uses an advanced protocol based on WireGuard. "
+               QObject::tr("PowVPN uses an advanced protocol based on WireGuard. "
                            "It provides high connection speed and ensures stable operation even in the most challenging network conditions.") },
              { DockerContainer::Xray,
                QObject::tr("XRay with REALITY masks VPN traffic as web traffic and protects against active probing. "
@@ -133,7 +133,7 @@ QMap<DockerContainer, QString> ContainerUtils::containerDetailedDescriptions()
                       "It provides a good balance between speed and security but is easily recognized by DPI systems, "
                       "making it susceptible to blocking.\n"
                       "\nFeatures:\n"
-                      "* Available on all Pow VPN platforms\n"
+                      "* Available on all PowVPN platforms\n"
                       "* Normal battery consumption on mobile devices\n"
                       "* Flexible customization for various devices and OS\n"
                       "* Operates over both TCP and UDP protocols") },
@@ -142,19 +142,19 @@ QMap<DockerContainer, QString> ContainerUtils::containerDetailedDescriptions()
                       "It uses fixed encryption settings, delivering lower latency and higher data transfer speeds compared to OpenVPN. "
                       "However, WireGuard is easily identifiable by DPI systems due to its distinctive packet signatures, making it susceptible to blocking.\n"
                       "\nFeatures:\n"
-                      "* Available on all Pow VPN platforms\n"
+                      "* Available on all PowVPN platforms\n"
                       "* Low power consumption on mobile devices\n"
                       "* Minimal configuration required\n"
                       "* Easily detected by DPI systems (susceptible to blocking)\n"
                       "* Operates over UDP protocol") },
         { DockerContainer::Awg2,
-          QObject::tr("Pow VPN uses a modern protocol based on WireGuard, "
+          QObject::tr("PowVPN uses a modern protocol based on WireGuard, "
                       "combining simplified architecture with high performance across all devices. "
                       "It addresses WireGuard's main vulnerability (easy detection by DPI systems) through advanced obfuscation techniques, "
                       "making VPN traffic indistinguishable from regular internet traffic.\n"
-                      "\nPow VPN is an excellent choice for those seeking a fast, stealthy VPN connection.\n"
+                      "\nPowVPN is an excellent choice for those seeking a fast, stealthy VPN connection.\n"
                       "\nFeatures:\n"
-                      "* Available on all Pow VPN platforms\n"
+                      "* Available on all PowVPN platforms\n"
                       "* Low battery consumption on mobile devices\n"
                       "* Minimal settings required\n"
                       "* Undetectable by traffic analysis systems (DPI)\n"
@@ -177,7 +177,7 @@ QMap<DockerContainer, QString> ContainerUtils::containerDetailedDescriptions()
                       "It reconnects quickly when switching networks or devices, making it ideal for dynamic network environments. "
                       "While it provides good security and speed, it's easily recognized by DPI systems and susceptible to blocking.\n"
                       "\nFeatures:\n"
-                      "* Available in Pow VPN only on Windows\n"
+                      "* Available in PowVPN only on Windows\n"
                       "* Low battery consumption on mobile devices\n"
                       "* Minimal configuration required\n"
                       "* Detectable by DPI analysis systems(easily blocked)\n"
@@ -345,7 +345,7 @@ QString ContainerUtils::easySetupHeader(DockerContainer container)
 QString ContainerUtils::easySetupDescription(DockerContainer container)
 {
     switch (container) {
-    case DockerContainer::Awg2: return QObject::tr("Pow VPN protocol will be installed. "
+    case DockerContainer::Awg2: return QObject::tr("PowVPN protocol will be installed. "
                                          "It provides high connection speed and ensures stable operation even in the most challenging network conditions.");
     default: return "";
     }

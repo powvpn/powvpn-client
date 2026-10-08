@@ -17,7 +17,7 @@ QJsonObject BrowserTunnelNativeHost::handle(const QJsonObject &request) {
         // The native host is a separate process from the GUI client, so report
         // availability based on whether the client's browser-tunnel bridge is
         // actually reachable -- otherwise the extension cannot tell the user to
-        // start Pow VPN Client.
+        // start PowVPN Client.
         QLocalSocket probe;
         probe.connectToServer(QStringLiteral("PowVPN.BrowserTunnel.v1"));
         const bool clientRunning = probe.waitForConnected(400);

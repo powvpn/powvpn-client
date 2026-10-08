@@ -73,7 +73,7 @@ Window  {
         console.warn("Scene graph error:", error, message)
     }
 
-    title: "Pow VPN"
+    title: "PowVPN"
 
     Item { // This item is needed for focus handling
         id: defaultFocusItem

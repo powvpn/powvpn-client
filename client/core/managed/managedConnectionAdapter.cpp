@@ -180,7 +180,7 @@ QString ManagedConnectionAdapter::buildAwgConfigText(const QJsonObject &config, 
     if (!psk.isEmpty()) {
         lines << QStringLiteral("PresharedKey = %1").arg(psk);
     }
-    // Pow VPN nodes currently provide IPv4 egress only. Do not advertise an
+    // PowVPN nodes currently provide IPv4 egress only. Do not advertise an
     // IPv6 default route until the node fleet has global IPv6 forwarding.
     lines << QStringLiteral("AllowedIPs = 0.0.0.0/0");
     lines << QStringLiteral("Endpoint = %1").arg(config.value("endpoint").toString());
@@ -225,7 +225,7 @@ QString ManagedConnectionAdapter::importCandidate(const QJsonObject &entry)
     const QString displayName = !country.isEmpty() && !city.isEmpty()
                                     ? QStringLiteral("%1 - %2").arg(country, city)
                                     : (!country.isEmpty() ? country : city);
-    const QString label = QStringLiteral("Pow VPN - %1").arg(displayName);
+    const QString label = QStringLiteral("PowVPN - %1").arg(displayName);
 
     QString rawText;
     if (protocol == QStringLiteral("amneziawg")) {
@@ -411,7 +411,7 @@ void ManagedConnectionAdapter::disconnectManaged()
 void ManagedConnectionAdapter::connectCountry(const QString &countryCode, const QString &accountToken)
 {
     if (!m_managedServiceController) {
-        emit connectionFailed(QStringLiteral("Pow VPN managed service is unavailable"));
+        emit connectionFailed(QStringLiteral("PowVPN managed service is unavailable"));
         return;
     }
     m_requestedCountry = countryCode.trimmed().toUpper();

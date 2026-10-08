@@ -429,8 +429,8 @@ Already installed containers were found on the server. All installed containers 
     <message>
         <location filename="../ui/utils/notificationHandler.cpp" line="57"/>
         <location filename="../ui/utils/notificationHandler.cpp" line="64"/>
-        <source>Pow VPN</source>
-        <translation>Pow VPN</translation>
+        <source>PowVPN</source>
+        <translation>PowVPN</translation>
     </message>
     <message>
         <location filename="../ui/utils/notificationHandler.cpp" line="58"/>
@@ -444,8 +444,8 @@ Already installed containers were found on the server. All installed containers 
     </message>
     <message>
         <location filename="../ui/utils/notificationHandler.cpp" line="88"/>
-        <source>Pow VPN notification</source>
-        <translation>Pow VPN अधिसूचना</translation>
+        <source>PowVPN notification</source>
+        <translation>PowVPN अधिसूचना</translation>
     </message>
     <message>
         <location filename="../ui/utils/notificationHandler.cpp" line="89"/>
@@ -3367,8 +3367,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettings.qml" line="177"/>
-        <source>About Pow VPN</source>
-        <translation>Pow VPN के बारे में</translation>
+        <source>About PowVPN</source>
+        <translation>PowVPN के बारे में</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettings.qml" line="188"/>
@@ -3380,8 +3380,8 @@ Create one from the current settings.</source>
     <name>PageSettingsAbout</name>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="21"/>
-        <source>You have the latest version of Pow VPN</source>
-        <translation>आपके पास Pow VPN का नवीनतम संस्करण है</translation>
+        <source>You have the latest version of PowVPN</source>
+        <translation>आपके पास PowVPN का नवीनतम संस्करण है</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsAbout.qml" line="25"/>
@@ -3657,8 +3657,8 @@ Create one from the current settings.</source>
     <name>PageSettingsApiNativeConfigs</name>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiNativeConfigs.qml" line="23"/>
-        <source>Save Pow VPN config</source>
-        <translation>Pow VPN कॉन्फ़िगरेशन सहेजें</translation>
+        <source>Save PowVPN config</source>
+        <translation>PowVPN कॉन्फ़िगरेशन सहेजें</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiNativeConfigs.qml" line="60"/>
@@ -3893,8 +3893,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiSubscriptionKey.qml" line="121"/>
-        <source>Save Pow VPN config</source>
-        <translation>Pow VPN कॉन्फ़िगरेशन सहेजें</translation>
+        <source>Save PowVPN config</source>
+        <translation>PowVPN कॉन्फ़िगरेशन सहेजें</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApiSubscriptionKey.qml" line="122"/>
@@ -4127,8 +4127,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApplication.qml" line="264"/>
-        <source>All settings will be reset to default. All installed Pow VPN services will still remain on the server.</source>
-        <translation>सभी सेटिंग्स डिफ़ॉल्ट पर रीसेट हो जाएंगी. सभी स्थापित Pow VPN सेवाएँ अभी भी सर्वर पर रहेंगी।.</translation>
+        <source>All settings will be reset to default. All installed PowVPN services will still remain on the server.</source>
+        <translation>सभी सेटिंग्स डिफ़ॉल्ट पर रीसेट हो जाएंगी. सभी स्थापित PowVPN सेवाएँ अभी भी सर्वर पर रहेंगी।.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsApplication.qml" line="265"/>
@@ -4165,8 +4165,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsBackup.qml" line="88"/>
-        <source>The backup will contain your passwords and private keys for all servers added to Pow VPN. Keep this information in a secure place.</source>
-        <translation>बैकअप में Pow VPN में जोड़े गए सभी सर्वरों के लिए आपके पासवर्ड और निजी कुंजी शामिल होंगी। इस जानकारी को सुरक्षित स्थान पर रखें.</translation>
+        <source>The backup will contain your passwords and private keys for all servers added to PowVPN. Keep this information in a secure place.</source>
+        <translation>बैकअप में PowVPN में जोड़े गए सभी सर्वरों के लिए आपके पासवर्ड और निजी कुंजी शामिल होंगी। इस जानकारी को सुरक्षित स्थान पर रखें.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsBackup.qml" line="102"/>
@@ -4559,8 +4559,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsLogging.qml" line="182"/>
-        <source>Pow VPN logs</source>
-        <translation>Pow VPN लॉग</translation>
+        <source>PowVPN logs</source>
+        <translation>PowVPN लॉग</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsLogging.qml" line="192"/>
@@ -4587,8 +4587,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsLogging.qml" line="211"/>
-        <source>Pow VPN-service logs</source>
-        <translation>Pow VPN-सेवा लॉग</translation>
+        <source>PowVPN-service logs</source>
+        <translation>PowVPN-सेवा लॉग</translation>
     </message>
 </context>
 <context>
@@ -4669,8 +4669,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsServerData.qml" line="147"/>
-        <source>All installed Pow VPN services will still remain on the server.</source>
-        <translation>सभी स्थापित Pow VPN सेवाएँ अभी भी सर्वर पर रहेंगी.</translation>
+        <source>All installed PowVPN services will still remain on the server.</source>
+        <translation>सभी स्थापित PowVPN सेवाएँ अभी भी सर्वर पर रहेंगी.</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSettingsServerData.qml" line="153"/>
@@ -5204,8 +5204,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSetupWizardConfigSource.qml" line="304"/>
-        <source>Configure Pow VPN on your own server</source>
-        <translation>अपने सर्वर पर Pow VPN कॉन्फ़िगर करें</translation>
+        <source>Configure PowVPN on your own server</source>
+        <translation>अपने सर्वर पर PowVPN कॉन्फ़िगर करें</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageSetupWizardConfigSource.qml" line="316"/>
@@ -5578,8 +5578,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="51"/>
-        <source>Save Pow VPN config</source>
-        <translation>Pow VPN कॉन्फ़िगरेशन सहेजें</translation>
+        <source>Save PowVPN config</source>
+        <translation>PowVPN कॉन्फ़िगरेशन सहेजें</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="58"/>
@@ -5613,8 +5613,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="108"/>
-        <source>For the Pow VPN app</source>
-        <translation>Pow VPN ऐप के लिए</translation>
+        <source>For the PowVPN app</source>
+        <translation>PowVPN ऐप के लिए</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShare.qml" line="113"/>
@@ -5781,8 +5781,8 @@ Create one from the current settings.</source>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShareConnection.qml" line="30"/>
-        <source>Save Pow VPN config</source>
-        <translation>Pow VPN कॉन्फ़िगरेशन सहेजें</translation>
+        <source>Save PowVPN config</source>
+        <translation>PowVPN कॉन्फ़िगरेशन सहेजें</translation>
     </message>
     <message>
         <location filename="../ui/qml/Pages2/PageShareConnection.qml" line="150"/>
@@ -6482,14 +6482,14 @@ Create one from the current settings.</source>
         <source>OpenVPN is one of the most popular and reliable VPN protocols. It uses SSL/TLS encryption, supports a wide variety of devices and operating systems, and is continuously improved by the community due to its open-source nature. It provides a good balance between speed and security but is easily recognized by DPI systems, making it susceptible to blocking.
 
 Features:
-* Available on all Pow VPN platforms
+* Available on all PowVPN platforms
 * Normal battery consumption on mobile devices
 * Flexible customization for various devices and OS
 * Operates over both TCP and UDP protocols</source>
         <translation>OpenVPN सबसे लोकप्रिय और भरोसेमंद VPN प्रोटोकॉल में से एक है। यह SSL/TLS एन्क्रिप्शन का उपयोग करता है, विभिन्न प्रकार के उपकरणों और ऑपरेटिंग सिस्टम का समर्थन करता है, और ओपन-सोर्स होने के कारण समुदाय द्वारा लगातार बेहतर बनाया जाता है। यह गति और सुरक्षा के बीच अच्छा संतुलन देता है, लेकिन DPI सिस्टम इसे आसानी से पहचान लेते हैं, जिससे यह अवरोधन के प्रति संवेदनशील हो जाता है।
 
 विशेषताएँ:
-* सभी Pow VPN प्लेटफ़ॉर्म पर उपलब्ध
+* सभी PowVPN प्लेटफ़ॉर्म पर उपलब्ध
 * मोबाइल उपकरणों पर सामान्य बैटरी खपत
 * विभिन्न उपकरणों और OS के लिए लचीला अनुकूलन
 * TCP और UDP दोनों प्रोटोकॉल पर काम करता है</translation>
@@ -6499,7 +6499,7 @@ Features:
         <source>WireGuard is a modern, streamlined VPN protocol offering stable connectivity and excellent performance across all devices. It uses fixed encryption settings, delivering lower latency and higher data transfer speeds compared to OpenVPN. However, WireGuard is easily identifiable by DPI systems due to its distinctive packet signatures, making it susceptible to blocking.
 
 Features:
-* Available on all Pow VPN platforms
+* Available on all PowVPN platforms
 * Low power consumption on mobile devices
 * Minimal configuration required
 * Easily detected by DPI systems (susceptible to blocking)
@@ -6507,7 +6507,7 @@ Features:
         <translation>WireGuard एक आधुनिक और सुव्यवस्थित VPN प्रोटोकॉल है जो सभी उपकरणों पर स्थिर कनेक्टिविटी और उत्कृष्ट प्रदर्शन देता है। यह निश्चित एन्क्रिप्शन सेटिंग्स का उपयोग करता है, जिससे OpenVPN की तुलना में कम विलंबता और अधिक डेटा स्थानांतरण गति मिलती है। हालाँकि, अपने विशिष्ट पैकेट हस्ताक्षरों के कारण WireGuard को DPI सिस्टम आसानी से पहचान लेते हैं, जिससे यह अवरोधन के प्रति संवेदनशील हो जाता है।
 
 विशेषताएँ:
-* सभी Pow VPN प्लेटफ़ॉर्म पर उपलब्ध
+* सभी PowVPN प्लेटफ़ॉर्म पर उपलब्ध
 * मोबाइल उपकरणों पर कम बिजली खपत
 * न्यूनतम कॉन्फ़िगरेशन की आवश्यकता
 * DPI सिस्टम द्वारा आसानी से पहचाना जाता है (अवरोधन के प्रति संवेदनशील)
@@ -6520,7 +6520,7 @@ Features:
 AmneziaWG is an excellent choice for those seeking a fast, stealthy VPN connection.
 
 Features:
-* Available on all Pow VPN platforms
+* Available on all PowVPN platforms
 * Low battery consumption on mobile devices
 * Minimal settings required
 * Undetectable by traffic analysis systems (DPI)
@@ -6530,7 +6530,7 @@ Features:
 जो लोग तेज़ और अदृश्य VPN कनेक्शन चाहते हैं, उनके लिए AmneziaWG एक उत्कृष्ट विकल्प है।
 
 विशेषताएँ:
-* सभी Pow VPN प्लेटफ़ॉर्म पर उपलब्ध
+* सभी PowVPN प्लेटफ़ॉर्म पर उपलब्ध
 * मोबाइल उपकरणों पर कम बैटरी खपत
 * न्यूनतम सेटिंग्स की आवश्यकता
 * ट्रैफ़िक विश्लेषण सिस्टम (DPI) द्वारा पता नहीं लगाया जा सकता
@@ -6562,7 +6562,7 @@ VMess, VLESS और XTLS-Vision जैसे पुराने प्रोट�
         <source>IKEv2, combined with IPSec encryption, is a modern and reliable VPN protocol. It reconnects quickly when switching networks or devices, making it ideal for dynamic network environments. While it provides good security and speed, it&apos;s easily recognized by DPI systems and susceptible to blocking.
 
 Features:
-* Available in Pow VPN only on Windows
+* Available in PowVPN only on Windows
 * Low battery consumption on mobile devices
 * Minimal configuration required
 * Detectable by DPI analysis systems(easily blocked)
@@ -6570,7 +6570,7 @@ Features:
         <translation>IKEv2, IPSec एन्क्रिप्शन के साथ मिलकर एक आधुनिक और भरोसेमंद VPN प्रोटोकॉल बनाता है। नेटवर्क या उपकरण बदलने पर यह तेज़ी से पुनः कनेक्ट हो जाता है, जिससे यह बदलते नेटवर्क वातावरण के लिए आदर्श है। यह अच्छी सुरक्षा और गति देता है, लेकिन DPI सिस्टम इसे आसानी से पहचान लेते हैं और यह अवरोधन के प्रति संवेदनशील है।
 
 विशेषताएँ:
-* Pow VPN में केवल Windows पर उपलब्ध
+* PowVPN में केवल Windows पर उपलब्ध
 * मोबाइल उपकरणों पर कम बैटरी खपत
 * न्यूनतम कॉन्फ़िगरेशन की आवश्यकता
 * DPI विश्लेषण सिस्टम द्वारा पहचाना जा सकता है (आसानी से अवरुद्ध)
