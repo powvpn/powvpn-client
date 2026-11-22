@@ -182,6 +182,15 @@ Button {
     }
 
     onClicked: {
+        // Managed PowVPN profiles are revoked server-side when a metered Free
+        // or trial quota ends.  Stop here as well, so retrying never looks
+        // like a generic network failure.
+        if (typeof ManagedServiceController !== "undefined"
+                && ManagedServiceController.registered
+                && !ManagedServiceController.accessAllowed) {
+            PageController.showNotificationMessage(qsTr("Free traffic limit reached. Choose a paid plan to continue."))
+            return
+        }
         ConnectionController.connectButtonClicked()
     }
 

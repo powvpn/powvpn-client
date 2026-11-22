@@ -110,17 +110,25 @@ if(ANDROID_BUILD_PLAY)
         set(_gradle_suffix "Debug")
     else()
         set(_gradle_suffix "Release")
+        set(_play_deploy_mode --release)
     endif()
+    add_custom_target(android_play_prepare
+        COMMAND "$<TARGET_FILE:Qt6::androiddeployqt>"
+            --input "${CMAKE_CURRENT_BINARY_DIR}/android-${PROJECT}-deployment-settings.json"
+            --output "${_android_build_dir}" ${_play_deploy_mode}
+        DEPENDS ${PROJECT}_prepare_apk_dir
+        VERBATIM
+    )
     add_custom_target(android_play_apk
-        COMMAND ./gradlew assemblePlay${_gradle_suffix}
+        COMMAND sh ./gradlew assemblePlay${_gradle_suffix}
         WORKING_DIRECTORY "${_android_build_dir}"
         COMMENT "Building Android Play APK (assemblePlay${_gradle_suffix})"
-        DEPENDS ${PROJECT}
+        DEPENDS android_play_prepare
     )
     add_custom_target(android_play_aab
-        COMMAND ./gradlew bundlePlay${_gradle_suffix}
+        COMMAND sh ./gradlew bundlePlay${_gradle_suffix}
         WORKING_DIRECTORY "${_android_build_dir}"
         COMMENT "Building Android Play AAB (bundlePlay${_gradle_suffix})"
-        DEPENDS ${PROJECT}
+        DEPENDS android_play_prepare
     )
 endif()

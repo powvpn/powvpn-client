@@ -507,6 +507,13 @@ void ManagedConnectionAdapter::onConnectionStateChanged(Vpn::ConnectionState sta
         sendTelemetry(QStringLiteral("connect_failed"));
         m_qualityTimer.stop();
 
+        // A server-side quota stop looks like an ordinary tunnel failure to
+        // the transport. Refresh the entitlement immediately so the UI turns
+        // that failure into the clear upgrade notice before the next retry.
+        if (m_managedServiceController && m_managedServiceController->registered()) {
+            m_managedServiceController->refresh();
+        }
+
         if (!m_hardFailureWindow.isValid() || m_hardFailureWindow.elapsed() > kHardFailureWindowMs) {
             m_hardFailureWindow.restart();
             m_hardFailureCount = 1;

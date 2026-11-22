@@ -3,6 +3,28 @@
 #include <QJsonDocument>
 #include <QNetworkReply>
 #include <QNetworkRequest>
+#include <QTimer>
+
+namespace {
+const QString primaryHost = QStringLiteral("powvpn.com");
+const QString backupHost = QStringLiteral("api-backup.powvpn.com");
+constexpr int backupCooldownMs = 120000;
+
+QNetworkRequest alternateRequest(QNetworkRequest request)
+{
+    QUrl url = request.url();
+    url.setHost(url.host() == primaryHost ? backupHost : primaryHost);
+    request.setUrl(url);
+    return request;
+}
+
+void limitDuration(QNetworkReply *reply, int milliseconds)
+{
+    QTimer::singleShot(milliseconds, reply, [reply] {
+        if (!reply->isFinished()) reply->abort();
+    });
+}
+}
 
 ManagedApiClient::ManagedApiClient(QObject *parent)
     : QObject(parent)
@@ -27,14 +49,66 @@ QNetworkRequest ManagedApiClient::request(const QString &path) const
 
 void ManagedApiClient::postJson(Operation op, const QString &path, const QJsonObject &payload)
 {
-    auto *reply = m_network.post(request(path), QJsonDocument(payload).toJson(QJsonDocument::Compact));
-    connect(reply, &QNetworkReply::finished, this, [this, op, reply] { handleReply(op, reply); });
+    dispatch(op, path, QJsonDocument(payload).toJson(QJsonDocument::Compact));
 }
 
 void ManagedApiClient::getJson(Operation op, const QString &path)
 {
-    auto *reply = m_network.get(request(path));
-    connect(reply, &QNetworkReply::finished, this, [this, op, reply] { handleReply(op, reply); });
+    dispatch(op, path, {});
+}
+
+void ManagedApiClient::dispatch(Operation op, const QString &path, const QByteArray &body)
+{
+    auto req = request(path);
+    const bool production = m_baseUrl.adjusted(QUrl::StripTrailingSlash) == QUrl("https://powvpn.com");
+    if (!production) {
+        send(op, req, body, false);
+        return;
+    }
+    req.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::ManualRedirectPolicy);
+    if (!m_preferBackup.hasExpired()) req = alternateRequest(req);
+    if (body.isEmpty()) {
+        send(op, req, body, true);
+        return;
+    }
+    // Probe without credentials before a write. A lost reply to an allocation
+    // or telemetry POST must never cause the payload to be submitted twice.
+    QUrl url = req.url();
+    url.setPath("/healthz");
+    QNetworkRequest health(url);
+    health.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::ManualRedirectPolicy);
+    health.setAttribute(QNetworkRequest::CacheLoadControlAttribute, QNetworkRequest::AlwaysNetwork);
+    auto *probe = m_network.get(health);
+    limitDuration(probe, 3500);
+    connect(probe, &QNetworkReply::finished, this, [this, op, req, body, probe] {
+        const bool ok = probe->error() == QNetworkReply::NoError &&
+            QJsonDocument::fromJson(probe->readAll()).object().value("ok").toBool();
+        probe->deleteLater();
+        send(op, ok ? req : alternateRequest(req), body, false);
+    });
+}
+
+void ManagedApiClient::send(Operation op, const QNetworkRequest &req, const QByteArray &body, bool retryRead)
+{
+    auto *reply = body.isEmpty() ? m_network.get(req) : m_network.post(req, body);
+    limitDuration(reply, retryRead ? 5000 : 30000);
+    connect(reply, &QNetworkReply::finished, this, [this, op, req, body, retryRead, reply] {
+        const int status = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+        const bool applicationError = status >= 400 && status < 500;
+        const bool unavailable = !applicationError && (reply->error() != QNetworkReply::NoError ||
+            status < 200 || status >= 300 || QJsonDocument::fromJson(reply->peek(reply->bytesAvailable())).isNull());
+        const bool backup = req.url().host() == backupHost;
+        if (req.url().host() == primaryHost || backup) {
+            if (unavailable == backup) m_preferBackup.setRemainingTime(0);
+            else if (m_preferBackup.hasExpired()) m_preferBackup.setRemainingTime(backupCooldownMs);
+        }
+        if (unavailable && retryRead) {
+            reply->deleteLater();
+            send(op, alternateRequest(req), body, false);
+            return;
+        }
+        handleReply(op, reply);
+    });
 }
 
 void ManagedApiClient::login(const QString &email, const QString &password)

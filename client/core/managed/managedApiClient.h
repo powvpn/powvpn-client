@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QObject>
+#include <QDeadlineTimer>
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QNetworkAccessManager>
@@ -70,9 +71,12 @@ private:
     QNetworkRequest request(const QString &path) const;
     void postJson(Operation op, const QString &path, const QJsonObject &payload);
     void getJson(Operation op, const QString &path);
+    void dispatch(Operation op, const QString &path, const QByteArray &body);
+    void send(Operation op, const QNetworkRequest &request, const QByteArray &body, bool retryRead);
     void handleReply(Operation op, QNetworkReply *reply);
 
     QUrl m_baseUrl;
     QString m_token;
     QNetworkAccessManager m_network;
+    QDeadlineTimer m_preferBackup;
 };

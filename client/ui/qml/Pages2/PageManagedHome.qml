@@ -27,12 +27,14 @@ Page {
                   .arg((ManagedServiceController.trafficLimitBytes / 1000000000).toFixed(0))
             opacity: 0.75
         }
-        Label {
+        Text {
             visible: !ManagedServiceController.accessAllowed
-            text: qsTr("Traffic limit reached. Choose any paid plan to continue.")
+            text: qsTr("Free traffic limit reached. <a href=\"https://powvpn.com/pricing\">Choose a paid plan to continue.</a>")
+            textFormat: Text.RichText
             color: "#d34a4a"
             wrapMode: Text.WordWrap
             Layout.fillWidth: true
+            onLinkActivated: (link) => Qt.openUrlExternally(link)
         }
 
         Rectangle {
@@ -103,7 +105,7 @@ Page {
             delegate: Button {
                 required property var modelData
                 width: ListView.view.width
-                enabled: modelData.available === true
+                enabled: modelData.available === true && ManagedServiceController.accessAllowed
                 text: modelData.country_name + "   " + modelData.country_code
                       + (ManagedConnectionAdapter.connected && modelData.country_code === ManagedConnectionAdapter.activeCountryCode
                          ? qsTr("  (connected)") : "")
